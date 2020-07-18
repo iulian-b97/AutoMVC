@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AutoMVC</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/css/MyAccount.css" rel="stylesheet" />
+    <link href="~/css/AddNewAd.css" rel="stylesheet" /> 
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-transparent bg-main border-bottom box-shadow mb-3">
+            <div class="container ajust-left">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
+                                <img src="~/images/AutoMVCLogo.png" width="150" height="40"/>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white btn btn-home my-2" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark btn btn-favorite my-2" asp-area="" asp-controller="Home" asp-action="Privacy">Favorite</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark btn btn-my_account my-2" asp-area="" asp-controller="MyAccount" asp-action="MyAccount">My Account</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark btn btn-add_new_ad my-2" asp-area="" asp-controller="AddNewAd" asp-action="AddNewAd">Add New Ad</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+    <img class="bg-img bg-blur" src='../images/background1.jpg' id='selector' />
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

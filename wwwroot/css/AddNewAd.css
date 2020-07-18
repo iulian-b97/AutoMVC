@@ -1,0 +1,28 @@
+﻿body {
+}
+
+.transparent-box {
+    width: 1180px;
+    height: 690px;
+    position: relative;
+    margin: 6% auto;
+    background-color: grey;
+    opacity:0.8;
+}
+
+.body-box {
+    width: 1180px;
+    height: 690px;
+    position: relative;
+    margin: 6% auto;
+    background:transparent;
+}
+
+.btn-add {
+    color: #fff;
+    background-color: #00ff00;
+    border-color: #1861ac;
+    width: 200px;
+    height: 40px;
+    text-align: center;
+}

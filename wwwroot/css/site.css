@@ -1,0 +1,167 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.ajust-left{
+    margin-left: 0%;
+}
+
+
+.btn-primary {
+    color: #fff;
+    background-color: #00ffff;
+    border-color: #1861ac;
+    width:100px;
+}
+
+.btn-home {
+    color: #fff;
+    background-color: #800000;
+    border-color: #ff0000;
+    width: 100px;
+}
+
+.btn-favorite {
+    color: #fff;
+    background-color: #00ffff;
+    border-color: #1861ac;
+    width: 100px;
+    margin-left: 835px;
+}
+
+.btn-my_account {
+    color: #fff;
+    background-color: #00ffff;
+    border-color: #1861ac;
+    width: 130px;
+    margin-left:5%;
+}
+
+.btn-add_new_ad {
+    color: #fff;
+    background-color: #00ffff;
+    border-color: #1861ac;
+    width: 130px;
+    margin-left: 10%;
+}
+
+.btn-search {
+    color: #fff;
+    background-color: #00ff00;
+    border-color: #1861ac;
+    width: 100px;
+    height: 40px;
+    text-align:center;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.navbar-transparent{
+    opacity: 0.9;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.bg-main {
+    background-color: #808080;
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    /*background-image: url('../images/background1.jpg');*/
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+    top: 0px;
+    left: -15px;
+}
+
+.bg-blur {
+    filter: blur(1px);
+    -webkit-filter: blur(1px);
+}
+
+.bg-img {
+    width: 100%;
+    position: fixed;
+    background-position: center;
+    background-size: cover;
+    top: 0px;
+    z-index: -2;
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.pagination a {
+    color: white;
+    float: left;
+    padding: 10px 30px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.pagination a.active {
+   background-color: dodgerblue;
+   color: black;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: grey;
+}
+
