@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using AutoMVC.Models;
+using AutoMVC.Repository;
 
 namespace AutoMVC.Controllers
 {
