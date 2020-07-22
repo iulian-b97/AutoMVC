@@ -14,20 +14,33 @@ namespace AutoMVC.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private readonly CarRepository _carRepository = null;
+
+        public HomeController(ILogger<HomeController> logger, CarRepository carRepository)
         {
             _logger = logger;
+
+            _carRepository = carRepository;
         }
 
-        public IActionResult Index()
+        public async Task<ViewResult> Index()
         {
-            return View();
+            var data = await _carRepository.GetAllCars();
+
+            return View(data);
         }
 
         public IActionResult Privacy()
         {
             return View();
         }
+
+       /* public async Task<ViewResult> GetAllCars()
+        {
+            var data = await _carRepository.GetAllCars();
+
+            return View(data);
+        } */
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

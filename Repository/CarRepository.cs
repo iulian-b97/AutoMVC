@@ -1,5 +1,6 @@
 ﻿using AutoMVC.Data;
 using AutoMVC.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,17 +11,19 @@ namespace AutoMVC.Repository
     public class CarRepository
     {
         private readonly AutoStoreContext _context = null;
+        public bool stat;
 
         public CarRepository(AutoStoreContext context)
         {
             _context = context;
+            stat = true;
         }
 
-        public int AddNewCar(CarModel model)
+        public async Task<int> AddNewCar(CarModel model)
         {
-            var newCar = new Cars()
+            var newCar = new CarModel()
             {
-                Id = model.Id,
+                ID = model.ID,
                 nameAd = model.nameAd,
                 Country = model.Country,
                 City = model.City,
@@ -37,10 +40,39 @@ namespace AutoMVC.Repository
             };
 
 
-            _context.Cars.Add(newCar);
-            _context.SaveChanges();
+            await _context.Cars.AddAsync(newCar);
+            await _context.SaveChangesAsync();
 
-            return newCar.Id;
+            return newCar.ID;
+        }
+
+        public async Task<List<CarModel>> GetAllCars()
+        {
+            var cars = new List<CarModel>();
+            var allcars = await _context.Cars.ToListAsync();
+            if (allcars?.Any() == true)
+            {
+                foreach (var car in allcars)
+                {
+                    cars.Add(new CarModel
+                    { 
+                        nameAd = car.nameAd,
+                        Country = car.Country,
+                        City = car.City,
+                        Address = car.Address,
+                        Mobile = car.Mobile,
+                        Mark = car.Mark,
+                        Model = car.Model,
+                        Fuel = car.Fuel,
+                        Body = car.Body,
+                        Year = car.Year,
+                        Km = car.Km,
+                        Price = car.Price,
+                        Describe = car.Describe
+                    });
+                }
+            }
+            return cars;
         }
     }
 }

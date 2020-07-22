@@ -7,7 +7,7 @@ namespace AutoMVC.Models
 {
     public class CarModel
     {
-        public int Id { get; set; }
+        public int ID { get; set; }
 
     
         public string nameAd { get; set; }

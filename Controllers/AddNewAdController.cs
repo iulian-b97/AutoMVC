@@ -23,9 +23,13 @@ namespace AutoMVC.Controllers
         }
 
         [HttpPost]
-        public ViewResult AddNewAd(CarModel carModel)
+        public async Task<IActionResult> AddNewAd(CarModel carModel)
         {
-            _carRepository.AddNewCar(carModel);
+            int id = await _carRepository.AddNewCar(carModel);
+            if(id > 0)  
+            {
+                return RedirectToAction(nameof(AddNewAd), new { isSuccess = true, bookId = id });
+            }
             return View();
         }
     }
