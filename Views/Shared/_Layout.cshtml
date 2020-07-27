@@ -11,7 +11,7 @@
 
 </head>
 <body>
-    <div style="width: 1539px; height: 1000px;  margin-left:1rem; margin-top:-0.13rem;">
+    <div style="width: 1539px; height: 1000px; margin-left: 1rem; margin-top: -0.13rem; background-image: url('images/background1.jpg');">
         <header>
             <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-transparent bg-main border-bottom box-shadow mb-3">
                 <div class="container ajust-left">
@@ -22,6 +22,7 @@
 
 
                     <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                        <partial name="_LoginPartial.cshtml"/>
                         <ul class="navbar-nav flex-grow-1">
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" style="margin-left:-1rem;">
@@ -35,9 +36,6 @@
                                 <a class="nav-link text-dark btn btn-favorite my-2" asp-area="" asp-controller="Home" asp-action="Privacy">Favorite</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark btn btn-my_account my-2" asp-area="" asp-controller="MyAccount" asp-action="MyAccount">My Account</a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link text-dark btn btn-add_new_ad my-2" asp-area="" asp-controller="AddNewAd" asp-action="AddNewAd">Add New Ad</a>
                             </li>
                         </ul>
@@ -46,7 +44,7 @@
 
             </nav>
         </header>
-        <img class="bg-img bg-blur" src='../images/background1.jpg' id='selector' />
+        
         <div class="container">
             <main role="main" class="pb-3">
                 @RenderBody()

@@ -30,6 +30,8 @@ namespace AutoMVC
 
             services.AddControllersWithViews();
 
+            services.AddRazorPages();
+
             services.AddRazorPages().AddRazorRuntimeCompilation();
 
             services.AddScoped<CarRepository, CarRepository>();
@@ -53,6 +55,7 @@ namespace AutoMVC
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -60,6 +63,7 @@ namespace AutoMVC
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
             });
         }
     }

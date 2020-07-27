@@ -4,10 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMVC.Models;
 using AutoMVC.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AutoMVC.Controllers
 {
+    [Authorize]
     public class AddNewAdController : Controller
     {
         private readonly CarRepository _carRepository = null;

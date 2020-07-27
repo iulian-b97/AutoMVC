@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using AutoMVC.Models;
 using AutoMVC.Repository;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AutoMVC.Controllers
 {

@@ -36,23 +36,24 @@ a {
     background-color: #00ffff;
     border-color: #1861ac;
     width: 100px;
-    margin-left: 835px;
-}
-
-.btn-my_account {
-    color: #fff;
-    background-color: #00ffff;
-    border-color: #1861ac;
-    width: 130px;
-    margin-left:5%;
+    margin-left: 25px;
 }
 
 .btn-add_new_ad {
     color: #fff;
     background-color: #00ffff;
     border-color: #1861ac;
-    width: 130px;
-    margin-left: 10%;
+    width:130px;
+    margin-left: 5%;
+}
+
+.btn-login-register {
+    color: #fff;
+    background-color: #00ffff;
+    border-color: #1861ac;
+    width: 100px;
+    text-align: center;
+    border-radius: 3px;
 }
 
 .btn-search {
@@ -113,7 +114,7 @@ html {
 
 body {
     /* Margin bottom by footer height */
-    /*background-image: url('../images/background1.jpg');*/
+    background-image: url('../images/background1.jpg');
     background-position: center;
     background-size: cover;
     position:relative;
