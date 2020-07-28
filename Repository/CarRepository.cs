@@ -1,6 +1,7 @@
 ﻿using AutoMVC.Data;
 using AutoMVC.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,8 +37,9 @@ namespace AutoMVC.Repository
                 Year = model.Year,
                 Km = model.Km,
                 Price = model.Price,
-                Describe = model.Describe
-            };
+                Describe = model.Describe,
+                ImageFileUrl = model.ImageFileUrl
+            };  
 
 
             await _context.Cars.AddAsync(newCar);
@@ -68,7 +70,8 @@ namespace AutoMVC.Repository
                         Year = car.Year,
                         Km = car.Km,
                         Price = car.Price,
-                        Describe = car.Describe
+                        Describe = car.Describe,
+                        ImageFileUrl = car.ImageFileUrl
                     });
                 }
             }

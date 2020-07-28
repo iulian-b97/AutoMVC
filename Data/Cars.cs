@@ -37,5 +37,7 @@ namespace AutoMVC.Data
         public int Price { get; set; }
 
         public string Describe { get; set; }
+
+        public string ImageFileUrl { get; set; }
     }
 }

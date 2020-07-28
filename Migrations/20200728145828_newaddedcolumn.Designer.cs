@@ -3,14 +3,16 @@ using AutoMVC.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AutoMVC.Migrations
 {
     [DbContext(typeof(AutoStoreContext))]
-    partial class AutoStoreContextModelSnapshot : ModelSnapshot
+    [Migration("20200728145828_newaddedcolumn")]
+    partial class newaddedcolumn
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,9 +43,6 @@ namespace AutoMVC.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Fuel")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageFileUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Km")

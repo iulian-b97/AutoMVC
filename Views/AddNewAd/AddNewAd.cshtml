@@ -10,11 +10,21 @@
     <div class="transparent-box" style="margin-top:-0.9rem; margin-left:3.4rem;">
         <h1 style="color:black; font-size:90px; font-style:oblique; margin-left:16.7rem;">Add New Ad</h1>
         <img src="~/images/logoauto.png" width="110" height="110" style="margin-top:-8rem; margin-left:8.7rem;"/>
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label asp-for="nameAd" style="margin-left:3rem; font-size:40px; color:white; margin-top:2rem;">Name Ad:</label>
                 <input asp-for="nameAd" class="form-control" style="width:50rem; margin-left:3rem;" />
             </div>
+
+            <div class="form-group">
+                <label asp-for="ImageFile" style="margin-left:3rem; font-size:40px; color:white; margin-top:2rem;">Photos Car:</label>
+                <div class="custom-file" style="width:50rem; margin-left:3rem;">
+                    <input asp-for="ImageFile" class="custom-file-input" id="customFile"/>
+                    <label class="custom-file-label" for="customFile">Choose File</label>
+                </div>
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+
             <div class="form-group">
                 <label asp-for="Country" style="margin-left:3rem; font-size:40px; color:white;">Country:</label>
                 <input asp-for="Country" class="form-control" style="width:50rem; margin-left:3rem;" />
@@ -64,7 +74,7 @@
                 <textarea asp-for="Describe" class="form-control" style="width:50rem; margin-left:3rem; height:15rem;"></textarea>
             </div>
             <div class="form-group">
-                <input type="submit" value="Add New Ad" class="btn btn-add" style="margin-top:0.8rem; margin-left:18.5rem; width:20rem; height:4rem; color:black; font-weight:bold;"/>
+                <input type="submit" value="Add New Ad" class="btn btn-add" style="margin-top:0.8rem; margin-left:18.5rem; width:20rem; height:4rem; color:black; font-weight:bold;" />
             </div>
         </form>
     </div>
