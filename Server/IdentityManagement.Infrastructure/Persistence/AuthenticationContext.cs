@@ -17,5 +17,6 @@ namespace IdentityManagement.Infrastructure.Persistence
         }
 
         public virtual DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public virtual DbSet<RefreshToken> RefreshTokens { get; set; }
     }
 }

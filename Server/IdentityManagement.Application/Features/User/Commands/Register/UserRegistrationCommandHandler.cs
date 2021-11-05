@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using IdentityManagement.Application.Contracts.Persistence;
 using IdentityManagement.Domain.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
@@ -15,11 +16,15 @@ namespace IdentityManagement.Application.Features.User.Commands.Register
     {
         private readonly IMapper _mapper;
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly IUserRepository _userRepository;
 
-        public UserRegistrationCommandHandler(IMapper mapper, UserManager<ApplicationUser> userManager)
+        public UserRegistrationCommandHandler(IMapper mapper, 
+            UserManager<ApplicationUser> userManager,
+            IUserRepository userRepository)
         {
             _mapper = mapper;
             _userManager = userManager;
+            _userRepository = userRepository;
         }
 
         public async Task<UserRegistrationCommandResponse> Handle(UserRegistrationCommand request, CancellationToken cancellationToken)
@@ -48,7 +53,12 @@ namespace IdentityManagement.Application.Features.User.Commands.Register
                     LastName = request.LastName,
                     Country = request.Country
                 };
-                var user = await _userManager.CreateAsync(newUser, request.Password);
+                var isCreated = await _userManager.CreateAsync(newUser, request.Password);
+                if (isCreated.Succeeded)
+                {
+                    var jwtToken = await _userRepository.GenerateJwtToken(newUser);
+                    userRegistrationCommandResponse.AuthResult = jwtToken;
+                }
             }
 
             return userRegistrationCommandResponse;

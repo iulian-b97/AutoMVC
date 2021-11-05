@@ -9,8 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\User\Commands\Login\" />
-    <Folder Include="Features\User\Commands\GenerateRefreshToken\" />
     <Folder Include="Features\User\Queries\GetUsersList\" />
     <Folder Include="Features\User\Queries\GetUser\" />
   </ItemGroup>

@@ -14,7 +14,7 @@ namespace IdentityManagement.Application.Contracts.Persistence
         Task<bool> ExistingUser(string email);
         Task<AuthResult> GenerateJwtToken(ApplicationUser user);
         Task<AuthResult> VerifyAndGenerateToken(TokenRequest tokenRequest);
-        Task<DateTime> UnixTimeStampToDateTime(long unixTimeStamp);
-        Task<string> RandomString(int length);
+        DateTime UnixTimeStampToDateTime(long unixTimeStamp);
+        string RandomString(int length);
     }
 }

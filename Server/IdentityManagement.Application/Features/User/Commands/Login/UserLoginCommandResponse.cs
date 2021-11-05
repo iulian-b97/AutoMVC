@@ -6,11 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IdentityManagement.Application.Features.User.Commands.Register
+namespace IdentityManagement.Application.Features.User.Commands.Login
 {
-    public class UserRegistrationCommandResponse : BaseResponse
+    public class UserLoginCommandResponse : BaseResponse
     {
-        public UserRegistrationCommandResponse() : base()
+        public UserLoginCommandResponse() : base()
         {
 
         }

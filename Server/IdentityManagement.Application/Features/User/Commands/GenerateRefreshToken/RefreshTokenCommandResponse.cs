@@ -6,11 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IdentityManagement.Application.Features.User.Commands.Register
+namespace IdentityManagement.Application.Features.User.Commands.GenerateRefreshToken
 {
-    public class UserRegistrationCommandResponse : BaseResponse
+    public class RefreshTokenCommandResponse : BaseResponse
     {
-        public UserRegistrationCommandResponse() : base()
+        public RefreshTokenCommandResponse() : base()
         {
 
         }
