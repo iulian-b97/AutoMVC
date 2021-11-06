@@ -57,7 +57,8 @@ namespace IdentityManagement.Infrastructure.Persistence
             });
 
             services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                        .AddEntityFrameworkStores<AuthenticationContext>();
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<AuthenticationContext>();
 
             return services; 
         }
