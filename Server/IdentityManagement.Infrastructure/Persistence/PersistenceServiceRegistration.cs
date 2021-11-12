@@ -54,10 +54,11 @@ namespace IdentityManagement.Infrastructure.Persistence
             .AddJwtBearer(jwt => {
                 jwt.SaveToken = true;
                 jwt.TokenValidationParameters = tokenValidationParams; 
-            });  
+            });
 
             services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                        .AddEntityFrameworkStores<AuthenticationContext>(); 
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<AuthenticationContext>();
 
             return services; 
         }
