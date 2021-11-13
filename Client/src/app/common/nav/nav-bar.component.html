@@ -1,0 +1,20 @@
+<div class="nav-container">
+    <a href=""><img src="./assets/images/logo.png"/></a> 
+    <div class="search-box">
+        <input type="text" placeholder=" Search announcement...."/>
+        <button class="search-btn"><i class="fas fa-search"></i></button>
+    </div>
+    <div class="nav-links">
+        <ul>
+            <div *ngIf="!isLogged">
+                <li><a href=""><i class="fas fa-user"></i>Login</a></li>
+                <li><a href=""><i class="fas fa-user-plus"></i>Register</a></li>
+                <li><button class="sell-btn"><i class="fas fa-plus"></i>SELL</button>></li>
+            </div>
+            <div *ngIf="isLogged">
+                <li><a href=""><i class="fas fa-user"></i><span>iulian.burghelea1997@gmail.com</span></a></li>
+                <li><button class="sell-btn"><i class="fas fa-plus"></i>SELL</button>></li>
+            </div>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,118 @@
+.nav-container {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 65px;
+    align-items: center;
+    background-color: #24292f;
+    display: flex;
+}
+
+.nav-container h1 {
+    color: #f1f0f0;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.nav-container a {
+    margin-top: 5px;
+}
+
+.nav-container img {
+    width: 80px;
+    margin: 35px;
+}
+
+.nav-links {
+    flex: 1;
+    text-align: right;
+    margin: 25px;
+}
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 3px 6px;
+    margin: 10px;
+    position: relative;
+}
+
+.nav-links ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.5s;
+}  
+
+.nav-links ul li a span {   
+    font-size: 14px;
+    font-weight:700;
+}  
+
+.nav-links ul li :hover {
+    color: #cacaca;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}   
+
+.nav-links i {
+    padding-right: 5px;
+}
+
+.sell-btn {
+    width: auto;
+    background-color: turquoise;
+    color: #ffffff; 
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px; 
+    border-radius: 5px;
+    border: solid 2px #ffffff;
+    cursor: pointer;
+}
+
+.sell-btn:hover {
+    background-color: rgb(28, 153, 161);
+}
+
+.search-box input {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    height: 31px;
+    width: 350px;
+    border: transparent;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+}
+
+.search-box input:focus{
+    outline: solid turquoise 0.15rem;
+    height: 27px;
+}
+
+.search-btn {
+    width: auto;
+    background-color: turquoise;
+    color: #ffffff; 
+    font-weight: bold;
+    font-size: 17px;
+    padding-top: 4px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px; 
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border: solid 2px transparent;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    background-color: rgb(28, 153, 161);
+}
+
