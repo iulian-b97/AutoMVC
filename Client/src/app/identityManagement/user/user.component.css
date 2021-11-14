@@ -1,0 +1,57 @@
+.responsive {
+    width: 100%;
+    min-height: 100% !important;
+    height: 100%;
+}
+
+.authentication-box {
+    display: flex;  
+    min-height: 100% !important;
+    height: 100%;
+}
+
+.column-1 {
+    width: 30%; 
+    background-image: url('src/assets/images/authentication-background.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position:center center;
+    border: 5px dotted black;
+}
+
+.column-1 i {
+    margin-right: 5px;
+}
+
+.column-2 {
+    width: 70%; 
+    background-image: url('src/assets/images/land-rover.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position:center center;
+}
+
+.authentication-header {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 70%;
+    margin: auto;
+    margin-top: 25%;
+    border: solid 2px white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.authentication-header a {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 10px;
+    margin: auto;
+}
+
+.authentication-header a:hover {
+    color: rgb(180, 176, 176);
+    transition: 0.5s;
+}

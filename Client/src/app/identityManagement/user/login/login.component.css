@@ -1,0 +1,50 @@
+.login-box {
+    width: 70%;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: auto;
+    border: 2px solid white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.login-box label {
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+    padding-left: 25px;
+}
+
+.login-box input {
+    width: 80%;
+    margin-top: 5px;
+    margin-left: 25px;
+    border-radius: 5px;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-box input:focus {
+    outline: solid turquoise 0.15rem;
+}
+
+.login-btn {
+    background-color: turquoise;
+    width: auto;
+    color: white;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 20px;
+    margin-left: 35%;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.login-btn:hover {
+    background-color: rgb(33, 124, 115);
+}
