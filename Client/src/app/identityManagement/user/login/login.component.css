@@ -48,3 +48,21 @@
 .login-btn:hover {
     background-color: rgb(33, 124, 115);
 }
+
+
+
+@media(max-width: 1300px) {
+    .login-box label {
+        font-size: 13px;
+    }
+
+    .login-box input {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 11px;
+    }
+
+    .login-btn {
+        font-size: 15px;
+    }
+}

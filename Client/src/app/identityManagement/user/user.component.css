@@ -16,7 +16,7 @@
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position:center center;
-    border: 5px dotted black;
+    border: 5px double black;
 }
 
 .column-1 i {
@@ -29,6 +29,9 @@
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position:center center;
+    border-top: 5px double black;
+    border-bottom: 5px double black;
+    border-right: 5px double black;
 }
 
 .authentication-header {
@@ -54,4 +57,12 @@
 .authentication-header a:hover {
     color: rgb(180, 176, 176);
     transition: 0.5s;
+}
+
+
+
+@media(max-width: 1300px) {
+    .authentication-header a {
+        font-size: 15px;
+    }
 }

@@ -48,3 +48,21 @@
 .register-btn:hover {
     background-color: rgb(33, 124, 115);
 }
+
+
+
+@media(max-width: 1300px) {
+    .register-box label {
+        font-size: 13px;
+    }
+
+    .register-box input {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 11px;
+    }
+
+    .register-btn {
+        font-size: 15px;
+    }
+}
