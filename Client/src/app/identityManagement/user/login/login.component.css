@@ -5,8 +5,7 @@
     border: 2px solid white;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    padding-top: 20px;
-    
+    padding-top: 20px;  
 }
 
 .login-box label {
@@ -42,7 +41,7 @@
 }
 
 .login-btn {
-    background-color: turquoise;
+    background-color: rgb(28, 153, 161);
     width: auto;
     color: white;
     font-weight: bold;
@@ -57,7 +56,8 @@
 }
 
 .login-btn:hover {
-    background-color: rgb(33, 124, 115);
+    background-color: turquoise;
+    transition: 0.5s;
 }
 
 .other-login-options hr {
@@ -85,7 +85,8 @@
 }
 
 .icons a i:hover {
-    color: turquoise;
+    color: rgb(28, 153, 161);
+    transition: 0.5s;
 }
 
 

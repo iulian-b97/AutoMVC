@@ -57,7 +57,7 @@
 }
 
 .register-btn {
-    background-color: turquoise;
+    background-color: rgb(28, 153, 161);
     width: auto;
     color: white;
     font-weight: bold;
@@ -72,7 +72,8 @@
 }
 
 .register-btn:hover {
-    background-color: rgb(33, 124, 115);
+    background-color: turquoise;
+    transition: 0.5s;
 }
 
 

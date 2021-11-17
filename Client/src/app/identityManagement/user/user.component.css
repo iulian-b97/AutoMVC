@@ -16,7 +16,7 @@
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position:center center;
-    border: 5px double black;
+    border-right: 3px inset dimgray;
 }
 
 .column-1 i {
@@ -29,9 +29,20 @@
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position:center center;
-    border-top: 5px double black;
-    border-bottom: 5px double black;
-    border-right: 5px double black;
+}
+
+.column-2 h1 {
+    font-size: 50px; 
+    color: #24292f; 
+    font-style:oblique; 
+    margin-top: 8%;
+}
+
+.column-2 p {
+    font-weight: 500; 
+    font-size: 21px; 
+    padding-top: 5px; 
+    color: #24292f;
 }
 
 .authentication-header {
@@ -39,7 +50,7 @@
     background-color: rgba(0, 0, 0, 0.6);
     width: 70%;
     margin: auto;
-    margin-top: 15%;
+    margin-top: 25%;
     border: solid 2px white;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;

@@ -8,15 +8,14 @@
     background-image: url(src/assets/images/bg-contact.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    border-left: 5px double black;
-    border-right: 5px double black;
+    border-top: 3px solid dimgray;
 }
 
 .header-form {
     width: 25%;
     background-color: rgb(20, 100, 153);
-    margin-left: 15%;
-    margin-top: 2%;
+    margin-left: 2%;
+    margin-top: 1.7%;
     text-align: center;
     color: white;
     padding-top: 10px;
@@ -30,7 +29,7 @@
 .body-form {
     width: 25%;
     background-color: white;
-    margin-left: 15%;
+    margin-left: 2%;
     border: 2px solid white;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -93,7 +92,8 @@
 }
 
 .contact-btn:hover {
-    background-color: rgb(18, 73, 110);
+    background-color: rgb(8, 135, 219);
+    transition: 0.5s;
 }
 
 .align-form label {
