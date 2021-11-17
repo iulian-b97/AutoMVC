@@ -16,17 +16,43 @@
     padding-left: 25px;
 }
 
+.register-box label i {
+    font-size: 17px; 
+    padding-right: 5px;
+    padding-left: 4px;
+}
+
 .register-box input {
     width: 80%;
     margin-top: 5px;
     margin-left: 25px;
     border-radius: 5px;
-    font-size: 20px;
+    font-size: 13px;
+    padding: 4px;
     text-align: center;
     margin-bottom: 20px;
 }
 
+.register-box select {
+    width: 83%;
+    margin-top: 5px;
+    margin-left: 26px;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 4px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.register-box button i {
+    font-size: 15px;
+}
+
 .register-box input:focus {
+    outline: solid turquoise 0.15rem;
+}
+
+.register-box select:focus {
     outline: solid turquoise 0.15rem;
 }
 
@@ -40,7 +66,7 @@
     padding-top: 5px;
     padding-bottom: 5px;
     font-size: 20px;
-    margin-left: 31%;
+    margin-left: 30%;
     border: 2px solid white;
     border-radius: 5px;
 }

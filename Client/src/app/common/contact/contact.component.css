@@ -44,13 +44,23 @@
     margin-left: 8%;
 }
 
+.body-form label i {
+    font-size: 12px; 
+    padding-right: 3px; 
+    padding-left: 2px;
+}
+
+.body-form button i {
+    font-size: 15px;
+}
+
 .body-form input {
     margin-top: 5px;
     margin-left: 8%;
     width: 80%;
     font-size: 11px;
     text-align: center;
-    border: 1px solid black;
+    border: 1px solid dimgray;
     border-radius: 5px;
     margin-bottom: 10px;
     padding: 5px;
@@ -79,7 +89,7 @@
     font-size: 20px;
     border: 2px solid dimgray;
     border-radius: 5px;
-    margin-left: 40%;
+    margin-left: 39%;
 }
 
 .contact-btn:hover {
@@ -88,7 +98,7 @@
 
 .align-form label {
     margin-left: 8%;
-    padding-right: 22%;
+    padding-right: 17%;
 }
 
 .align-form input {

@@ -1,7 +1,11 @@
 ﻿using IdentityManagement.Application.Features.User.Commands.GenerateRefreshToken;
 using IdentityManagement.Application.Features.User.Commands.Login;
 using IdentityManagement.Application.Features.User.Commands.Register;
+using IdentityManagement.Application.Models;
+using IdentityManagement.Domain.Entities;
+using IdentityManagement.Infrastructure.Persistence;
 using MediatR;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -22,21 +26,34 @@ namespace IdentityManagement.Api.Controllers
         public async Task<IActionResult> Register([FromBody] UserRegistrationCommand userRegistrationCommand)
         {
             var response = await _mediator.Send(userRegistrationCommand);
-            return Ok(response);
+            if(response.Success)
+            {
+                return Ok(response);
+            }
+            return BadRequest("User could not be created.");
         }
 
+        
         [HttpPost("login", Name = "Login")]
         public async Task<IActionResult> Login([FromBody] UserLoginCommand userLoginCommand)
         {
             var response = await _mediator.Send(userLoginCommand);
-            return Ok(response);
-        }
+            if (response != null)
+            {
+                return Ok(response);
+            }
+            return BadRequest("Email or password is invalid.");
+        } 
 
         [HttpPost("refreshToken", Name = "RefreshToken")]
         public async Task<IActionResult> RefreshToken([FromBody] RefreshTokenCommand refreshTokenCommand)
         {
             var response = await _mediator.Send(refreshTokenCommand);
-            return Ok(response);
+            if (response.Success)
+            {
+                return Ok(response);
+            }
+            return BadRequest("Token could not be created.");
         }
     }
 }

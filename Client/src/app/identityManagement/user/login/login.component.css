@@ -6,7 +6,7 @@
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     padding-top: 20px;
-    padding-bottom: 20px;
+    
 }
 
 .login-box label {
@@ -16,18 +16,29 @@
     padding-left: 25px;
 }
 
+.login-box label i {
+    font-size: 17px; 
+    padding-right: 5px;
+    padding-left: 4px;
+}
+
 .login-box input {
     width: 80%;
     margin-top: 5px;
     margin-left: 25px;
     border-radius: 5px;
-    font-size: 20px;
+    font-size: 13px;
+    padding: 4px;
     text-align: center;
     margin-bottom: 20px;
 }
 
 .login-box input:focus {
     outline: solid turquoise 0.15rem;
+}
+
+.login-box button i {
+    font-size: 15px;
 }
 
 .login-btn {
@@ -40,13 +51,41 @@
     padding-top: 5px;
     padding-bottom: 5px;
     font-size: 20px;
-    margin-left: 35%;
+    margin-left: 34%;
     border: 2px solid white;
     border-radius: 5px;
 }
 
 .login-btn:hover {
     background-color: rgb(33, 124, 115);
+}
+
+.other-login-options hr {
+    color: white; 
+    height: 2px; 
+    background-color: white;
+    margin-top: 10%
+}
+
+.other-login-options h3 {
+    text-align: center; 
+    color: white; 
+    padding-top: 10px; 
+    padding-bottom: 5px;
+}
+
+.icons {
+    margin-left: 20%;
+}
+
+.icons a i {
+    padding:15px; 
+    font-size: 30px; 
+    color: white;
+}
+
+.icons a i:hover {
+    color: turquoise;
 }
 
 
@@ -64,5 +103,14 @@
 
     .login-btn {
         font-size: 15px;
+    }
+
+    .icons a i {
+        font-size: 20px;
+        padding: 5px;
+    }
+
+    .icons {
+        margin-left: 27%;
     }
 }

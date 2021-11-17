@@ -50,7 +50,7 @@
     font-weight:700;
 }  
 
-.nav-links ul li :hover {
+.nav-links ul li a:hover {
     color: #cacaca;
     text-decoration: none;
     font-size: 20px;
@@ -59,6 +59,10 @@
 
 .nav-links i {
     padding-right: 5px;
+}
+
+.nav-links ul li button:hover {
+    color: white;
 }
 
 .sell-btn {
@@ -83,17 +87,21 @@
 .search-box input {
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
-    height: 31px;
     width: 350px;
     border: transparent;
     font-weight: bold;
-    font-size: 15px;
-    text-align: center;
+    font-size: 14px;
+    text-align: left;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 15px;
 }
 
 .search-box input:focus{
     outline: solid turquoise 0.15rem;
-    height: 27px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px
 }
 
 .search-btn {

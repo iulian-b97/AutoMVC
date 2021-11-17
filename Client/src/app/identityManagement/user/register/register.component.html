@@ -1,13 +1,24 @@
 <div class="register-box">
-    <label>Email</label> <br>
-    <input type="text"/>
-    <label>Password</label> <br>
-    <input type="text"/>
-    <label>Confirm Password</label> <br>
-    <input type="text"/>
-    <label>Telephone</label> <br>
-    <input type="text"/>
-    <label>Country</label> <br>
-    <input type="text"/>
-    <button class="register-btn">Register</button>
+    <form [formGroup]="userService.formModel" autocomplete="off" (submit)="register()">
+        <label><i class="fas fa-user"></i>Username</label>
+        <input type="text" formControlName="UserName"/>
+        <label><i class="fas fa-envelope"></i>Email</label> <br>
+        <input type="text" formControlName="Email"/>
+        <div formGroupName="Passwords">
+            <label><i class="fas fa-key"></i>Password</label> <br>
+            <input type="password" formControlName="Password"/>
+            <label><i class="fas fa-key"></i>Confirm password</label> <br>
+            <input type="password" formControlName="ConfirmPassword"/>
+        </div>
+        <label><i class="fas fa-mobile-alt"></i>Telephone</label> <br>
+        <input type="text" formControlName="PhoneNumber"/>
+        <label><i class="fas fa-globe"></i>Country</label> <br>
+        <select formControlName="Country">
+            <option value="Romanian">Romanian</option>
+            <option value="Brazilia">Brazilia</option>
+            <option value="France">France</option>
+            <option value="Germany">Germany</option>
+        </select>
+        <button class="register-btn">Register <i class="fas fa-paper-plane"></i></button>
+    </form>
 </div>

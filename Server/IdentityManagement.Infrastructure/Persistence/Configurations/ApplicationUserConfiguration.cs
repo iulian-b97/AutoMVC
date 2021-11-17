@@ -26,11 +26,9 @@ namespace IdentityManagement.Infrastructure.Persistence.Configurations
                 .HasMaxLength(20);
 
             builder.Property(a => a.FirstName)
-                .IsRequired()
                 .HasMaxLength(50);
 
             builder.Property(a => a.LastName)
-                .IsRequired()
                 .HasMaxLength(50);
 
             builder.Property(a => a.Country)
