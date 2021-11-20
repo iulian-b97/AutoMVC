@@ -1,77 +1,49 @@
-.nav-container {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: 65px;
-    align-items: center;
+nav {
+    font-size: 1.5rem;
     background-color: #24292f;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
     display: flex;
-    position: fixed;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.nav-container h1 {
-    color: #f1f0f0;
-    font-size: 28px;
-    font-weight: 600;
+nav ul li {
+    cursor: pointer;
+    padding: 0.5rem;
+    flex: auto;
+    text-align: center;
 }
 
-.nav-container a {
-    margin-top: 5px;
+nav ul li a i {
+    padding-right: 0.4rem;
 }
 
-.nav-container img {
-    width: 80px;
-    margin: 35px;
-}
-
-.nav-links {
-    flex: 1;
-    text-align: right;
-    margin: 25px;
-}
-
-.nav-links ul li {
-    list-style: none;
-    display: inline-block;
-    padding: 3px 6px;
-    margin: 10px;
-    position: relative;
-}
-
-.nav-links ul li a {
-    color: #ffffff;
+nav ul li a {
     text-decoration: none;
-    font-size: 20px;
-    font-weight: bold;
+    color: #fff;
     transition: 0.5s;
-}  
-
-.nav-links ul li a span {   
-    font-size: 14px;
-    font-weight:700;
-}  
-
-.nav-links ul li a:hover {
-    color: #cacaca;
-    text-decoration: none;
-    font-size: 20px;
     font-weight: bold;
+}
+
+nav ul li a img {
+    height: 50px;
+}
+
+nav ul li a:hover {
+    color: #cacaca;
 }   
-
-.nav-links i {
-    padding-right: 5px;
-}
-
-.nav-links ul li button:hover {
-    color: white;
-}
 
 .sell-btn {
     width: auto;
     background-color: rgb(28, 153, 161);
     color: #ffffff; 
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1.5rem;
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 10px;
@@ -86,43 +58,29 @@
     transition: 0.5s;
 }
 
-.search-box input {
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    width: 350px;
-    border: transparent;
-    font-weight: bold;
-    font-size: 14px;
-    text-align: left;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-left: 15px;
-}
 
-.search-box input:focus{
-    outline: solid turquoise 0.15rem;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 15px
-}
 
-.search-btn {
-    width: auto;
-    background-color: rgb(28, 153, 161);
-    color: #ffffff; 
-    font-weight: bold;
-    font-size: 17px;
-    padding-top: 4px;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 10px; 
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    border: solid 2px transparent;
-    cursor: pointer;
-}
+@media all and (max-width: 748px) {
+    nav ul {
+        flex-direction: column;
+    }
 
-.search-btn:hover {
-    background-color: turquoise;
-    transition: 0.5s;
+    nav ul li {
+        text-align: center;
+        padding: 0.4rem;
+    }
+
+    nav ul li a {
+        font-size: 1.2rem;
+    }
+
+    nav ul li a img:hover {
+        background-color: #555;
+        color: white;
+        transition: 0.5s;
+    }
+
+    .sell-btn {
+        font-size: 1rem;
+    }
 }
