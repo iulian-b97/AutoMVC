@@ -1,35 +1,41 @@
 .login-box {
+    display: flexbox;
+    flex-direction: column;
     width: 70%;
     background-color: rgba(0, 0, 0, 0.6);
     margin: auto;
     border: 2px solid white;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    padding-top: 20px;  
+    padding-top: 1rem;  
+    padding-bottom: 1rem;
+    text-align: center;
 }
 
 .login-box label {
     color: white;
     font-weight: 500;
-    font-size: 20px;
-    padding-left: 25px;
+    float: left;
+    padding-left: 10%;
+}
+
+.login-box label span {
+    font-size: 1rem;
 }
 
 .login-box label i {
-    font-size: 17px; 
-    padding-right: 5px;
-    padding-left: 4px;
+    font-size: 1rem; 
+    padding-right: 0.2rem;
+    padding-bottom: 0.3rem;
 }
 
 .login-box input {
     width: 80%;
-    margin-top: 5px;
-    margin-left: 25px;
     border-radius: 5px;
     font-size: 13px;
-    padding: 4px;
+    padding: 0.1rem;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
 }
 
 .login-box input:focus {
@@ -50,7 +56,7 @@
     padding-top: 5px;
     padding-bottom: 5px;
     font-size: 20px;
-    margin-left: 34%;
+    
     border: 2px solid white;
     border-radius: 5px;
 }
@@ -58,6 +64,12 @@
 .login-btn:hover {
     background-color: turquoise;
     transition: 0.5s;
+}
+
+.other-login-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .other-login-options hr {
@@ -74,14 +86,10 @@
     padding-bottom: 5px;
 }
 
-.icons {
-    margin-left: 20%;
-}
-
 .icons a i {
-    padding:15px; 
-    font-size: 30px; 
     color: white;
+    font-size: 25px;
+    padding: 1rem;
 }
 
 .icons a i:hover {
@@ -91,27 +99,39 @@
 
 
 
-@media(max-width: 1300px) {
-    .login-box label {
-        font-size: 13px;
+@media only screen and (max-width:319px)  {
+    
+}
+
+@media only screen and (min-width:320px) and (max-width:767px)  { 
+    .login-box {
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width:768px) and (max-width:1073px)  { 
+    .login-box {
+        width: 40%;
+    }
+}
+
+@media only screen and (min-width:1074px) and (max-width:1899px) { 
+    .login-box {
+        width: 80%;
     }
 
     .login-box input {
-        padding-top: 5px;
-        padding-bottom: 5px;
-        font-size: 11px;
-    }
-
-    .login-btn {
         font-size: 15px;
+        padding: 0.2rem;
     }
 
     .icons a i {
-        font-size: 20px;
-        padding: 5px;
-    }
-
-    .icons {
-        margin-left: 27%;
+        font-size: 30px;
     }
 }
+
+@media only screen and (min-width:1900px) { 
+
+ }
+
+

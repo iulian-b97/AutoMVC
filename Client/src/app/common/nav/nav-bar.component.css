@@ -60,7 +60,7 @@ nav ul li a:hover {
 
 
 
-@media all and (max-width: 748px) {
+@media all and (max-width: 767px) {
     nav ul {
         flex-direction: column;
     }
