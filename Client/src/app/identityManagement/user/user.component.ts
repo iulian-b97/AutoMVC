@@ -1,4 +1,5 @@
-import { Component } from "@angular/core"; 
+import { Component, OnInit } from "@angular/core"; 
+import { UserService } from "./user.service";
 
 @Component({
     selector: 'user',
@@ -6,5 +7,5 @@ import { Component } from "@angular/core";
     styleUrls: ['./user.component.css']
 })
 export class UserComponent {
-
+  
 }

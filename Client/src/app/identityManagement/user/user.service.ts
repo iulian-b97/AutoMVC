@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { BehaviorSubject } from "rxjs";
@@ -61,4 +61,28 @@ export class UserService{
     login(formData: any) {
         return this.http.post(this.BaseURI + '/authentication/login', formData);
     }
+
+    logout() {
+        localStorage.setItem('loggedIn', 'false');
+        this.isLoggedIn$.next(false);
+
+        localStorage.removeItem('token');
+    }
+
+    getUserId() {
+        var tokenHeader = new HttpHeaders({'Authorization':'Bearer '+ localStorage.getItem('token')})
+
+        return this.http.get(this.BaseURI + '/userProfile/userId', {headers: tokenHeader})
+    }
+
+    getUserDetail(userId: string) {
+        const params = new HttpParams()
+            .set('userId', userId)
+
+        return this.http.get(this.BaseURI + '/userProfile/userDetail', {params})
+    }
+
+    isLogged(): boolean {
+    return this.isLoggedIn$.value;
+  }
 }

@@ -105,13 +105,21 @@
 
 @media only screen and (min-width:320px) and (max-width:767px)  { 
     .login-box {
-        width: 50%;
+        width: 80%;
+    }
+
+    .login-box input {
+        padding: 0.3rem;
     }
 }
 
 @media only screen and (min-width:768px) and (max-width:1073px)  { 
     .login-box {
-        width: 40%;
+        width: 60%;
+    }
+
+    .login-box input {
+        padding: 0.3rem;
     }
 }
 

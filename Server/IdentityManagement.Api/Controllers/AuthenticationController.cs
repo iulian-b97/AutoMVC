@@ -5,8 +5,12 @@ using IdentityManagement.Application.Models;
 using IdentityManagement.Domain.Entities;
 using IdentityManagement.Infrastructure.Persistence;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace IdentityManagement.Api.Controllers
@@ -17,7 +21,7 @@ namespace IdentityManagement.Api.Controllers
     {
         private readonly IMediator _mediator;
 
-        public AuthenticationController(IMediator mediator)
+        public AuthenticationController(IMediator mediator, UserManager<ApplicationUser> userManager)
         {
             _mediator = mediator;
         }
