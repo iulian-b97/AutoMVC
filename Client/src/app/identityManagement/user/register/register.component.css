@@ -1,0 +1,113 @@
+.register-box {
+    width: 70%;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: auto;
+    border: 2px solid white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.register-box label {
+    color: white;
+    font-weight: 500;
+    float: left;
+    padding-left: 10%;
+}
+
+.register-box label i {
+    font-size: 1rem; 
+    padding-right: 0.2rem;
+    padding-bottom: 0.3rem;
+}
+
+.register-box input {
+    width: 80%;
+    margin-top: 5px;
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 4px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.register-box select {
+    width: 83%;
+    margin-top: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 4px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.register-box button i {
+    font-size: 15px;
+}
+
+.register-box input:focus {
+    outline: solid turquoise 0.15rem;
+}
+
+.register-box select:focus {
+    outline: solid turquoise 0.15rem;
+}
+
+.register-btn {
+    background-color: rgb(28, 153, 161);
+    width: auto;
+    color: white;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 20px;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.register-btn:hover {
+    background-color: turquoise;
+    transition: 0.5s;
+}
+
+
+
+@media only screen and (max-width:319px)  {
+    
+}
+
+@media only screen and (min-width:320px) and (max-width:767px)  { 
+    .register-box {
+        width: 80%;
+    }
+
+    .register-box input {
+        padding: 0.3rem;
+    }
+}
+
+@media only screen and (min-width:768px) and (max-width:1073px)  { 
+    .register-box {
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width:1074px) and (max-width:1899px) { 
+    .register-box {
+        width: 80%;
+    }
+
+    .register-box input {
+        font-size: 15px;
+        padding: 0.2rem;
+    }
+}
+
+@media only screen and (min-width:1900px) { 
+
+ }
+

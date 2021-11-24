@@ -1,0 +1,18 @@
+<div class="login-box">
+    <form #form='ngForm' autocomplete="off" (submit)="login(form)">
+        <label><i class="fas fa-envelope"></i><span>Email</span></label> <br>
+        <input type="text" #UserName="ngModel" name="Email" [(ngModel)]="formModel.Email" required/> <br>
+        <label><i class="fas fa-key"></i><span>Password</span></label> <br>
+        <input type="password" #UserName="ngModel" name="Password" [(ngModel)]="formModel.Password" required/> <br>
+        <button class="login-btn" [disabled]="form.invalid">Login <i class="fas fa-paper-plane"></i></button>
+    </form>
+    <div class="other-login-options">
+        <hr>
+        <h3>Login with:</h3>
+        <div class="icons">
+            <a href=""><i class="fab fa-facebook"></i></a>
+            <a href=""><i class="fab fa-twitter"></i></a>
+            <a href=""><i class="fab fa-google"></i></a>
+        </div>
+    </div>
+</div>

@@ -1,4 +1,5 @@
 ﻿using IdentityManagement.Application.Contracts.Persistence;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace IdentityManagement.Infrastructure.Persistence.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<T> GetByIdAsync(Guid id)
+        public Task<T> GetByIdAsync(string id)
         {
             throw new NotImplementedException();
         }

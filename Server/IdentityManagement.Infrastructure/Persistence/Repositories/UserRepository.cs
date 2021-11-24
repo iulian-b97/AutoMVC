@@ -39,6 +39,17 @@ namespace IdentityManagement.Infrastructure.Persistence.Repositories
             throw new NotImplementedException();
         }
 
+        public async Task<ApplicationUser> GetUser(string userId)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            if(user == null)
+            {
+                return null;
+            }
+
+            return user;
+        }
+
         public async Task<AuthResult> GenerateJwtToken(ApplicationUser user)
         {
             var jwtTokenHandler = new JwtSecurityTokenHandler();
@@ -54,7 +65,7 @@ namespace IdentityManagement.Infrastructure.Persistence.Repositories
                     new Claim(JwtRegisteredClaimNames.Sub, user.Email),
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
                 }),
-                Expires = DateTime.UtcNow.AddSeconds(30), // 5-10 
+                Expires = DateTime.UtcNow.AddMinutes(30), // 5-10 
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
 
@@ -68,7 +79,7 @@ namespace IdentityManagement.Infrastructure.Persistence.Repositories
                 IsRevorked = false,
                 UserId = user.Id,
                 AddedDate = DateTime.UtcNow,
-                ExpiryDate = DateTime.UtcNow.AddMonths(6),
+                ExpiryDate = DateTime.UtcNow.AddDays(1),
                 Token = RandomString(35) + Guid.NewGuid()
             };
 

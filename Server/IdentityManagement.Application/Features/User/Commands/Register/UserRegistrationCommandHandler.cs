@@ -49,8 +49,7 @@ namespace IdentityManagement.Application.Features.User.Commands.Register
                 {
                     UserName = request.UserName,
                     Email = request.Email,
-                    FirstName = request.FirstName,
-                    LastName = request.LastName,
+                    PhoneNumber = request.PhoneNumber,
                     Country = request.Country
                 };
                 var isCreated = await _userManager.CreateAsync(newUser, request.Password);
