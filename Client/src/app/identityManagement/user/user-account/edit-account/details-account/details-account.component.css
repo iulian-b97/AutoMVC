@@ -1,0 +1,23 @@
+.edit-box-header {
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.edit-box-content {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.edit-box-content label {
+    padding-top: 0.5rem;
+    font-size: 17px;
+}
+
+.edit-box-content input {
+    padding: 0.3rem;
+    text-align: center;
+    border: 1px solid dimgrey;
+    border-radius: 5px;
+}

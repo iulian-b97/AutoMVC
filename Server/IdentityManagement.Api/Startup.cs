@@ -35,7 +35,7 @@ namespace IdentityManagement.Api
             services.AddPersistenceServices(Configuration);
             services.AddApplicationServices();
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "IdentityManagement.Api", Version = "v1" });

@@ -1,0 +1,8 @@
+<div class="edit-box-header">
+    <h1>Edit country</h1>
+</div>
+<div class="edit-box-content">
+    <label>Country</label>
+    <input type="text" name="country" [(ngModel)]="user.country"/>
+    <button class="update-btn" (click)="onSubmit('/Country', user.country)"><i class="fas fa-arrow-up"></i> Update</button>
+</div>

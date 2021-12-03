@@ -75,6 +75,24 @@ export class UserService{
         return this.http.get(this.BaseURI + '/userProfile/userId', {headers: tokenHeader})
     }
 
+    getUserAccount() {
+        var tokenHeader = new HttpHeaders({'Authorization':'Bearer '+ localStorage.getItem('token')})
+
+        return this.http.get(this.BaseURI + '/userProfile/userAccount', {headers: tokenHeader})
+    }
+    
+    patchUserAccount(val_path:string, val_value:string) {
+        const body = [{
+            op: "replace",
+            path: val_path,
+            value: val_value
+        }]
+
+        var tokenHeader = new HttpHeaders({'Authorization':'Bearer '+ localStorage.getItem('token')})
+
+        return this.http.patch(this.BaseURI + '/userProfile/updateUserAccount', body, {headers: tokenHeader})
+    }
+
     getUserDetail(userId: string) {
         const params = new HttpParams()
             .set('userId', userId)

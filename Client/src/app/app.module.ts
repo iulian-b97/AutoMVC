@@ -9,9 +9,15 @@ import { ContactComponent } from './common/contact/contact.component';
 import { NavBarComponent } from './common/nav/nav-bar.component';
 import { LoginComponent } from './identityManagement/user/login/login.component';
 import { RegisterComponent } from './identityManagement/user/register/register.component';
+import { DetailsAccountComponent } from './identityManagement/user/user-account/edit-account/details-account/details-account.component';
+import { EditCountryComponent } from './identityManagement/user/user-account/edit-account/edit-country/edit-country.component';
+import { EditNameComponent } from './identityManagement/user/user-account/edit-account/edit-name/edit-name.component';
+import { EditPhoneComponent } from './identityManagement/user/user-account/edit-account/edit-phone/edit-phone.component';
+import { EditUsernameComponent } from './identityManagement/user/user-account/edit-account/edit-username/edit-username.component';
 import { UserAccountComponent } from './identityManagement/user/user-account/user-account.component';
 import { UserComponent } from './identityManagement/user/user.component';
 import { UserService } from './identityManagement/user/user.service';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +27,12 @@ import { UserService } from './identityManagement/user/user.service';
     UserAccountComponent,
     LoginComponent,
     RegisterComponent,
-    ContactComponent
+    ContactComponent,
+    DetailsAccountComponent,
+    EditCountryComponent,
+    EditNameComponent,
+    EditPhoneComponent,
+    EditUsernameComponent
   ],
   imports: [
     BrowserModule,
