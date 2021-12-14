@@ -77,7 +77,7 @@ nav ul li a:hover {
 
 .user-name {
     font-size: 1.3rem;
-    font-weight: 500;
+    font-weight: bold
 }
 
 .user-name-icon {
@@ -96,7 +96,7 @@ nav ul li a:hover {
     border: 1px solid white;
     border-radius: 5px; 
     text-align: center;
-    margin-left: 0.4rem;
+    margin-left: 0.7rem;
     margin-top: 0.2rem;
 }
 

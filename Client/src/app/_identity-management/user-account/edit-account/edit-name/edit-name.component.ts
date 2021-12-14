@@ -1,15 +1,15 @@
 import { Component, OnInit } from "@angular/core";
-import { UserService } from "../../../user.service";
 import { UserAccount } from "../../user-account.model";
+import { UserAccountService } from "../../user-account.service";
 
 @Component({
-    templateUrl: './edit-phone.component.html',
-    styleUrls: ['./edit-phone.component.css']
+    templateUrl: './edit-name.component.html',
+    styleUrls: ['./edit-name.component.css']
 })
-export class EditPhoneComponent implements OnInit {
+export class EditNameComponent implements OnInit {
     user: UserAccount
 
-    constructor(private userService: UserService) {
+    constructor(private userService: UserAccountService) {
   
     }
   

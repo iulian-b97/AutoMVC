@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../../user.service';
-import { UserAccount } from '../../user-account.model';
+import { UserAccount } from '../user-account.model';
+import { UserAccountService } from '../user-account.service';
 
 @Component({
-  templateUrl: './details-account.component.html',
-  styleUrls: ['./details-account.component.css']
+  templateUrl: './view-account.component.html',
+  styleUrls: ['./view-account.component.css']
 })
 export class DetailsAccountComponent implements OnInit {
     user: UserAccount
 
-    constructor(private userService: UserService) {
+    constructor(private userService: UserAccountService) {
 
     }
 

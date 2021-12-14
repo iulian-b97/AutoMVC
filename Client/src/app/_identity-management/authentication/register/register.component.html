@@ -1,5 +1,5 @@
 <div class="register-box">
-    <form [formGroup]="userService.formModel" autocomplete="off" (submit)="register()">
+    <form [formGroup]="registerForm" autocomplete="off" (submit)="register()">
         <label><i class="fas fa-user"></i>Username</label>
         <input type="text" formControlName="UserName"/>
         <label><i class="fas fa-envelope"></i>Email</label> <br>

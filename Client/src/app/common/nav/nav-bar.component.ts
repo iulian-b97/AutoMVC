@@ -1,22 +1,31 @@
-import { Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { UserService } from "src/app/identityManagement/user/user.service";
+import { BehaviorSubject } from "rxjs";
+import { AuthenticationService } from "src/app/_identity-management/authentication/authentication.service";
+import { UserAccountService } from "src/app/_identity-management/user-account/user-account.service";
+import { User } from "src/app/_identity-management/user-account/user.model";
 
 @Component({
     selector: 'nav-bar',
     templateUrl: './nav-bar.component.html',
-    styleUrls: ['./nav-bar.component.css']
+    styleUrls: ['./nav-bar.component.css'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NavBarComponent{
+export class NavBarComponent implements OnInit {
     show:boolean = true
+    user: User
+    
 
-    constructor(private userService: UserService, private router: Router) {
-        
+    constructor(public authService: AuthenticationService, public userService: UserAccountService, private router: Router) {
+    }
+
+    ngOnInit() {
+        this.authService.email$ = new BehaviorSubject('My account')  
     }
 
     isLogged(): boolean {
-        return this.userService.isLogged();
-    }
+        return this.authService.isLogged()
+    } 
 
     onShow() {
         if(!this.show)
@@ -30,8 +39,8 @@ export class NavBarComponent{
     }
 
     onLogout() {
-        this.userService.logout();
+        this.authService.logout();
 
-        return this.router.navigate(['/user/login']);
+        return this.router.navigate(['/home']);
     }
 }

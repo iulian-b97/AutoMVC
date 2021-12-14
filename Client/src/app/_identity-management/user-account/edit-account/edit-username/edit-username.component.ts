@@ -1,6 +1,6 @@
 import { Component, OnInit  } from "@angular/core";
-import { UserService } from "../../../user.service";
 import { UserAccount } from "../../user-account.model";
+import { UserAccountService } from "../../user-account.service";
 
 @Component({
     selector: 'app-edit-username',
@@ -10,7 +10,7 @@ import { UserAccount } from "../../user-account.model";
 export class EditUsernameComponent implements OnInit {
     user: UserAccount
 
-    constructor(private userService: UserService) {
+    constructor(private userService: UserAccountService) {
   
     }
   
