@@ -1,0 +1,45 @@
+.edit-box-header {
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.edit-box-content {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.edit-box-content label {
+    padding-top: 0.5rem;
+    font-size: 17px;
+}
+
+.edit-box-content input {
+    padding: 0.3rem;
+    text-align: center;
+    border: 1px solid dimgrey;
+    border-radius: 5px;
+}
+
+.update-btn {
+    width: auto;
+    background-color: rgb(28, 153, 161);
+    margin: auto;
+    font-size: 20px;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    color: white;
+    font-weight: 600;
+    margin-top: 5%;
+    border: 2px solid rgb(167, 159, 159);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.update-btn:hover {
+    background-color: turquoise;
+    transition: 0.5s;
+}
