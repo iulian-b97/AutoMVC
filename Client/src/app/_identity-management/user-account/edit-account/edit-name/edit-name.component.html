@@ -3,8 +3,9 @@
 </div>
 <div class="edit-box-content">
     <label>First name</label>
-    <input type="text" value="{{user?.firstName}}"/>
+    <input type="text" #firstName value="{{userService.user?.firstName}}"/>
+    <button class="update-btn" (click)="onSubmit('/FirstName', firstName.value)"><i class="fas fa-arrow-up"></i> Update</button>
     <label>Last name</label>
-    <input type="text" value="{{user?.lastName}}"/>
-    <button class="update-btn"><i class="fas fa-arrow-up"></i> Update</button>
+    <input type="text" #lastName value="{{userService.user?.lastName}}"/>
+    <button class="update-btn" (click)="onSubmit('/LastName', lastName.value)"><i class="fas fa-arrow-up"></i> Update</button>
 </div>

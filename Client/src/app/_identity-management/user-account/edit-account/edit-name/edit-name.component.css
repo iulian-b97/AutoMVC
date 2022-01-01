@@ -6,13 +6,12 @@
 .edit-box-content {
     display: flex;
     flex-direction: column;
-    width: 80%;
-    margin-left: 10%;
 }
 
 .edit-box-content label {
     padding-top: 0.5rem;
-    font-size: 17px;
+    font-size: 20px;
+    margin-left: 24.5%;
 }
 
 .edit-box-content input {
@@ -20,6 +19,8 @@
     text-align: center;
     border: 1px solid dimgrey;
     border-radius: 5px;
+    width: 50%;
+    margin: auto;
 }
 
 .update-btn {
@@ -33,7 +34,7 @@
     padding-right: 0.8rem;
     color: white;
     font-weight: 600;
-    margin-top: 5%;
+    margin-top: 1%;
     border: 2px solid rgb(167, 159, 159);
     border-radius: 5px;
     cursor: pointer;
@@ -42,4 +43,39 @@
 .update-btn:hover {
     background-color: turquoise;
     transition: 0.5s;
+}
+
+
+@media all and (max-width: 767px) {
+    .edit-box-header {
+        text-align: center;
+        padding-top: 0.5rem;
+        padding-bottom: 0.2rem;
+        font-size: 1.5vh;
+    }
+    
+    .edit-box-content label {
+        padding-top: 0.5rem;
+        font-size: 18px;
+        margin-left: 5%;
+    }
+    
+    .edit-box-content input {
+        padding: 0.2rem;
+        text-align: center;
+        border: 1px solid dimgrey;
+        border-radius: 5px;
+        width: 90%;
+        margin: auto;
+    }
+}
+
+@media only screen and (min-width:768px) and (max-width:1200px)  { 
+    .edit-box-content input {
+        width: 80%;
+    }
+
+    .edit-box-content label {
+        margin-left: 9%;
+    }
 }

@@ -3,6 +3,6 @@
 </div>
 <div class="edit-box-content">
     <label>Phone number</label>
-    <input type="text" value="{{user?.phoneNumber}}"/>
-    <button class="update-btn"><i class="fas fa-arrow-up"></i> Update</button>
+    <input type="text" #phoneNumber value="{{userService.user?.phoneNumber}}"/>
+    <button class="update-btn" (click)="onSubmit('/PhoneNumber', phoneNumber.value)"><i class="fas fa-arrow-up"></i> Update</button>
 </div>

@@ -1,6 +1,5 @@
 ﻿using IdentityManagement.Application.Contracts.Persistence;
 using IdentityManagement.Application.Models;
-using IdentityManagement.Application.Models.Requests;
 using IdentityManagement.Domain.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -20,16 +19,13 @@ namespace IdentityManagement.Infrastructure.Persistence.Repositories
     {
         private readonly JwtConfig _jwtConfig;
         private readonly AuthenticationContext _authenticationContext;
-        private readonly TokenValidationParameters _tokenValidationParams;
         private readonly UserManager<ApplicationUser> _userManager;
 
         public UserRepository(IOptionsMonitor<JwtConfig> optionsMonitor,
             AuthenticationContext authenticationContext,
-            TokenValidationParameters tokenValidationParameters,
             UserManager<ApplicationUser> userManager)
         {
             _jwtConfig = optionsMonitor.CurrentValue;
-            _tokenValidationParams = tokenValidationParameters;
             _userManager = userManager;
             _authenticationContext = authenticationContext;
         }
@@ -65,7 +61,7 @@ namespace IdentityManagement.Infrastructure.Persistence.Repositories
                     new Claim(JwtRegisteredClaimNames.Sub, user.Email),
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
                 }),
-                Expires = DateTime.UtcNow.AddMinutes(30), // 5-10 
+                Expires = DateTime.UtcNow.AddSeconds(30), // 5-10 
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
 
@@ -94,44 +90,14 @@ namespace IdentityManagement.Infrastructure.Persistence.Repositories
             };
         }
 
-        public async Task<AuthResult> VerifyAndGenerateToken(TokenRequest tokenRequest)
+        public async Task<AuthResult> VerifyAndGenerateToken(string token, string refreshToken)
         {
             var jwtTokenHandler = new JwtSecurityTokenHandler();
 
             try
             {
-                // Validation 1 - Validation JWT token format
-                var tokenInVerification = jwtTokenHandler.ValidateToken(tokenRequest.Token, _tokenValidationParams, out var validatedToken);
-
-                // Validation 2 - Validate encryption alg
-                if (validatedToken is JwtSecurityToken jwtSecurityToken)
-                {
-                    var result = jwtSecurityToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase);
-
-                    if (result == false)
-                    {
-                        return null;
-                    }
-                }
-
-                // Validation 3 - validate expiry date
-                var utcExpiryDate = long.Parse(tokenInVerification.Claims.FirstOrDefault(x => x.Type == JwtRegisteredClaimNames.Exp).Value);
-
-                var expiryDate = UnixTimeStampToDateTime(utcExpiryDate);
-
-                if (expiryDate > DateTime.UtcNow)
-                {
-                    return new AuthResult()
-                    {
-                        Success = false,
-                        Errors = new List<string>() {
-                            "Token has not yet expired"
-                        }
-                    };
-                }
-
-                // validation 4 - validate existence of the token
-                var storedToken = await _authenticationContext.RefreshTokens.FirstOrDefaultAsync(x => x.Token == tokenRequest.RefreshToken);
+                // validation 1 - validate existence of the token
+                var storedToken = await _authenticationContext.RefreshTokens.FirstOrDefaultAsync(x => x.Token == refreshToken);
 
                 if (storedToken == null)
                 {
@@ -144,7 +110,7 @@ namespace IdentityManagement.Infrastructure.Persistence.Repositories
                     };
                 }
 
-                // Validation 5 - validate if used
+                // Validation 2 - validate if used
                 if (storedToken.IsUsed)
                 {
                     return new AuthResult()
@@ -156,7 +122,7 @@ namespace IdentityManagement.Infrastructure.Persistence.Repositories
                     };
                 }
 
-                // Validation 6 - validate if revoked
+                // Validation 3 - validate if revoked
                 if (storedToken.IsRevorked)
                 {
                     return new AuthResult()
@@ -168,25 +134,17 @@ namespace IdentityManagement.Infrastructure.Persistence.Repositories
                     };
                 }
 
-                // Validation 7 - validate the id
-                var jti = tokenInVerification.Claims.FirstOrDefault(x => x.Type == JwtRegisteredClaimNames.Jti).Value;
-
-                if (storedToken.JwtId != jti)
-                {
-                    return new AuthResult()
-                    {
-                        Success = false,
-                        Errors = new List<string>() {
-                            "Token doesn't match"
-                        }
-                    };
-                }
-
-                // update current token 
-
+                // Update current token 
                 storedToken.IsUsed = true;
                  _authenticationContext.RefreshTokens.Update(storedToken);
                  await _authenticationContext.SaveChangesAsync();
+
+                // Remove expired tokens from database
+                var list = _authenticationContext.RefreshTokens.ToList();
+                if(list.Count >= 1000)
+                {
+                    _authenticationContext.RefreshTokens.RemoveRange(list);
+                }
 
                 // Generate a new token
                 var dbUser = await _userManager.FindByIdAsync(storedToken.UserId);

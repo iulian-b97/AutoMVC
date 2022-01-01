@@ -55,8 +55,7 @@
     padding-right: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
-    font-size: 20px;
-    
+    font-size: 20px;  
     border: 2px solid white;
     border-radius: 5px;
 }
@@ -96,7 +95,6 @@
     color: rgb(28, 153, 161);
     transition: 0.5s;
 }
-
 
 
 @media only screen and (max-width:319px)  {

@@ -8,8 +8,8 @@
         <li *ngIf="!isLogged()"><a routerLink="/user/login"><i class="fas fa-user"></i>Authentication</a></li>
         <li class="user-name" *ngIf="isLogged()">
             <a routerLink="/user/login">
-                <i class="fas fa-chevron-down user-name-icon"></i>
-                <span class="user-name-text">{{ authService.email$ | async }}</span>
+                <i class="fas fa-user user-name-icon"></i>
+                <span class="user-name-text">{{userService.user.userName}}</span>
             </a>
             <div class="subnav-content">
                 <a routerLink="/user-account/details-account"><i class="fas fa-user-edit color-1"></i>Edit account</a>

@@ -1,15 +1,12 @@
 ﻿using IdentityManagement.Application.Contracts.Persistence;
+using IdentityManagement.Application.Models;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace IdentityManagement.Application.Features.User.Commands.GenerateRefreshToken
 {
-    public class RefreshTokenCommandHandler : IRequestHandler<RefreshTokenCommand, RefreshTokenCommandResponse>
+    public class RefreshTokenCommandHandler : IRequestHandler<RefreshTokenCommand, AuthResult>
     {
         private readonly IUserRepository _userRepository;
 
@@ -18,37 +15,14 @@ namespace IdentityManagement.Application.Features.User.Commands.GenerateRefreshT
             _userRepository = userRepository;
         }
 
-        public async Task<RefreshTokenCommandResponse> Handle(RefreshTokenCommand request, CancellationToken cancellationToken)
+        public async Task<AuthResult> Handle(RefreshTokenCommand request, CancellationToken cancellationToken)
         {
-            var refreshTokenCommandResponse = new RefreshTokenCommandResponse();
+            var authResult = new AuthResult();
+            var result = await _userRepository.VerifyAndGenerateToken(request.Token, request.RefreshToken);
 
-            var validator = new RefreshTokenCommandValidator();
-            var validationResult = await validator.ValidateAsync(request);
+            authResult = result;
 
-            if (validationResult.Errors.Count > 0)
-            {
-                refreshTokenCommandResponse.Success = false;
-                refreshTokenCommandResponse.ValidationErrors = new List<string>();
-                foreach (var error in validationResult.Errors)
-                {
-                    refreshTokenCommandResponse.ValidationErrors.Add(error.ErrorMessage);
-                }
-            }
-            if (refreshTokenCommandResponse.Success)
-            {
-                var result = await _userRepository.VerifyAndGenerateToken(request.TokenRequest);
-
-                if(result == null)
-                {
-                    refreshTokenCommandResponse.Success = false;
-                }
-                else
-                {
-                    refreshTokenCommandResponse.AuthResult = result;
-                }
-            }
-
-            return refreshTokenCommandResponse;
+            return authResult;
         }
     }
 }

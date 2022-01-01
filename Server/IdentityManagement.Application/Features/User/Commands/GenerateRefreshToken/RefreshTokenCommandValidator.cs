@@ -1,9 +1,5 @@
 ﻿using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace IdentityManagement.Application.Features.User.Commands.GenerateRefreshToken
 {
@@ -11,11 +7,11 @@ namespace IdentityManagement.Application.Features.User.Commands.GenerateRefreshT
     {
         public RefreshTokenCommandValidator()
         {
-            RuleFor(p => p.TokenRequest.Token)
+            RuleFor(p => p.Token)
                 .NotEmpty().WithMessage("{PropertyName} is required.")
                 .NotNull();
 
-            RuleFor(p => p.TokenRequest.RefreshToken)
+            RuleFor(p => p.RefreshToken)
                .NotEmpty().WithMessage("{PropertyName} is required.")
                .NotNull();
         }

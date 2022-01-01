@@ -1,16 +1,10 @@
 ﻿using IdentityManagement.Application.Features.User.Commands.GenerateRefreshToken;
 using IdentityManagement.Application.Features.User.Commands.Login;
 using IdentityManagement.Application.Features.User.Commands.Register;
-using IdentityManagement.Application.Models;
 using IdentityManagement.Domain.Entities;
-using IdentityManagement.Infrastructure.Persistence;
 using MediatR;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Linq;
-using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace IdentityManagement.Api.Controllers
@@ -37,7 +31,6 @@ namespace IdentityManagement.Api.Controllers
             return BadRequest("User could not be created.");
         }
 
-        
         [HttpPost("login", Name = "Login")]
         public async Task<IActionResult> Login([FromBody] UserLoginCommand userLoginCommand)
         {
@@ -53,11 +46,11 @@ namespace IdentityManagement.Api.Controllers
         public async Task<IActionResult> RefreshToken([FromBody] RefreshTokenCommand refreshTokenCommand)
         {
             var response = await _mediator.Send(refreshTokenCommand);
-            if (response.Success)
+            if (response != null)
             {
                 return Ok(response);
             }
-            return BadRequest("Token could not be created.");
+            return BadRequest("Token could not be created."); 
         }
     }
 }
