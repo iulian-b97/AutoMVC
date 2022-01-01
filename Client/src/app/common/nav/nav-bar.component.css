@@ -6,6 +6,13 @@ nav {
     align-items: center;
 }
 
+/*Logo AutoMVC*/
+nav a img {
+    height: 40px;
+    padding-top: 0.43rem;
+    padding-left: 3rem;
+}
+
 nav ul {
     list-style-type: none;
     margin: 0;
@@ -23,10 +30,6 @@ nav ul li {
     text-align: center;
 }
 
-nav ul li a i {
-    padding-right: 0.4rem;
-}
-
 nav ul li a {
     text-decoration: none;
     color: #fff;
@@ -36,12 +39,10 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #cacaca;
-}  
+} 
 
-.primary-icon {
-    height: 40px;
-    padding-top: 0.4rem;
-    padding-left: 2rem;
+nav ul li a i {
+    padding-right: 0.4rem;
 }
 
 .sell-btn {
@@ -66,26 +67,29 @@ nav ul li a:hover {
 
 .menu {
     display: none;
+    cursor: pointer;
+    margin-right: 13px;
 }
 
 .menu-line {
     width: 25px;
     height: 5px;
     background-color: white;
-    margin-bottom: 5px;
+    margin-bottom: 6px;      
 }
 
-.user-name {
-    font-size: 1.3rem;
-    font-weight: bold
+.user-name div {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 0.2rem;
 }
 
 .user-name-icon {
-    color: rgb(0, 245, 0);
+    color: rgb(113, 252, 0);
 }
 
 .user-name-text {
-    color: rgb(0, 255, 0);
+    color: rgb(113, 252, 0);
 }
 
 .subnav-content {
@@ -96,8 +100,7 @@ nav ul li a:hover {
     border: 1px solid white;
     border-radius: 5px; 
     text-align: center;
-    margin-left: 0.7rem;
-    margin-top: 0.2rem;
+    margin-left: 1.5%;
 }
 
 .subnav-content a {
@@ -138,16 +141,24 @@ nav ul li a:hover {
         min-height: 55px;
     }
 
+    /*Logo AutoMVC*/
+    nav a img {
+        height: 35px;
+        padding-top: 0.7rem;
+    }
+
     nav ul {
         display: block;
         width: 100%;
-        margin-left: 5.5%
+        margin: auto;
+        padding-top: 30px;
     }
 
     nav ul li {
-        margin-top: 27px;
+        
         border-top: 1px solid white;
-        padding-top: 30px;
+        padding: 20px;
+        margin: auto;
     }
 
     .menu {
@@ -166,19 +177,18 @@ nav ul li a:hover {
         padding-top: 0.6rem;
         position: absolute;
         left: -3%;
-    }
-
-    .sell-btn {
-        margin-bottom: 20px;
-    }
+    } 
 
     .subnav-content {
         position: relative;
         justify-content: space-around;
-    }
-
-    .subnav-content a {
-        padding-left: 0.4rem;
-        padding-right: 0.4rem;
+        margin: auto;
     }
 }
+
+@media only screen and (min-width:768px) and (max-width:1073px)  { 
+    .subnav-content {
+        margin-left: 1%;
+    }
+}
+

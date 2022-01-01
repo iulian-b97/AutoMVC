@@ -1,8 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { Router } from "@angular/router";
-import { BehaviorSubject } from "rxjs";
-import { NavBarComponent } from "src/app/common/nav/nav-bar.component";
 import { UserAccountService } from "../../user-account/user-account.service";
 import { AuthenticationService } from "../authentication.service";
 
@@ -12,19 +10,19 @@ import { AuthenticationService } from "../authentication.service";
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginComponent implements OnInit {
-    formModel={ 
+    formModel = { 
         Email: '',
         Password: ''
-      }
-
-    constructor(private authService: AuthenticationService, public userService: UserAccountService, private router: Router) {
-          
     }
+
+    constructor(private authService: AuthenticationService, 
+                private userService: UserAccountService,
+                private router: Router) {}
 
     ngOnInit(): void {
         if(localStorage.getItem('token') != null )
         {
-            this.router.navigateByUrl('/home');
+            this.router.navigateByUrl('/home')
         }
         
     }
@@ -33,17 +31,22 @@ export class LoginComponent implements OnInit {
         this.authService.login(form.value).subscribe((res:any) => {
             localStorage.setItem('token', res.token)
             localStorage.setItem('refreshToken', res.refreshToken)
-            this.router.navigateByUrl('/home');
-            localStorage.setItem('loggedIn', 'true');
-            this.authService.isLoggedIn$.next(true);       
+            this.router.navigateByUrl('/home')
+            localStorage.setItem('loggedIn', 'true')
+            this.authService.isLoggedIn$.next(true)  
+            
+            //Get user account details
+            this.userService.getUserAccount().subscribe(res => {
+                localStorage.setItem("user", JSON.stringify(res))
+            })
         },
         err=>{
             if(err.status == 400)
             {
-              localStorage.setItem('loggedIn','false');
+              localStorage.setItem('loggedIn','false')
             }
             else
-              console.log(err);
+              console.log(err)
           }
         )
     }

@@ -3,6 +3,8 @@
 </div>
 <div class="edit-box-content">
     <label>Country</label>
-    <input type="text" name="country" [(ngModel)]="user.country"/>
-    <button class="update-btn" (click)="onSubmit('/Country', user.country)"><i class="fas fa-arrow-up"></i> Update</button>
+    <input type="text" name="country" #country value="{{userService.user?.country}}"/>
+    <button class="update-btn" (click)="onSubmit('/Country', country.value)"><i class="fas fa-arrow-up"></i> Update</button>
 </div>
+
+

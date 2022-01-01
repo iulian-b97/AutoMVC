@@ -7,14 +7,10 @@ import { BehaviorSubject } from "rxjs";
 })
 export class IdentityService {
     public isLoggedIn$: BehaviorSubject<boolean>
-    public isReload$: BehaviorSubject<boolean>
 
     constructor(protected http: HttpClient) {
         const isLoggedIn = localStorage.getItem('loggedIn') === 'true'
         this.isLoggedIn$ = new BehaviorSubject(isLoggedIn)
-
-        const res = localStorage.getItem('loggedIn') === 'false'
-        this.isReload$ = new BehaviorSubject(res)
     }
 
     httpOptions = {

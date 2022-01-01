@@ -1,7 +1,6 @@
-import { HttpClient, HttpParams } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
-import { BehaviorSubject, Observable } from "rxjs";
 import { IdentityService } from "../identity-service";
 import { RefreshTokenRequest } from "./refresh-token-request.model";
 
@@ -36,12 +35,8 @@ export class RefreshTokenService extends IdentityService {
         localStorage.setItem("refreshToken", refreshToken);
     }
 
-    getRefreshTokensRequest(token: string, refreshToken: string) {
-        const params = new HttpParams()
-            .set('token', token)
-            .set('refreshToken', refreshToken)
-
-        return this.http.post(this.BaseURI + '/authentication/refreshToken', {params})
+    getRefreshTokensRequest() {
+        return this.http.post(this.BaseURI + '/authentication/refreshToken', this.getRefreshTokenRequest())
     }
 
     signOut() {

@@ -8,9 +8,9 @@ import { AuthenticationService } from "../authentication.service";
     styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-    constructor(private authService: AuthenticationService, private fb: FormBuilder, private router: Router) {
-
-    }
+    constructor(private authService: AuthenticationService, 
+                private fb: FormBuilder, 
+                private router: Router) {}
 
     registerForm = this.fb.group({
         UserName :['',Validators.required],

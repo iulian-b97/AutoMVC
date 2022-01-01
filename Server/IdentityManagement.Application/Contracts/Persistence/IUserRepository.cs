@@ -1,10 +1,6 @@
 ﻿using IdentityManagement.Application.Models;
-using IdentityManagement.Application.Models.Requests;
 using IdentityManagement.Domain.Entities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace IdentityManagement.Application.Contracts.Persistence
@@ -14,7 +10,7 @@ namespace IdentityManagement.Application.Contracts.Persistence
         Task<bool> ExistingUser(string email);
         Task<ApplicationUser> GetUser(string userId);
         Task<AuthResult> GenerateJwtToken(ApplicationUser user);
-        Task<AuthResult> VerifyAndGenerateToken(TokenRequest tokenRequest);
+        Task<AuthResult> VerifyAndGenerateToken(string token, string refreshToken);
         DateTime UnixTimeStampToDateTime(long unixTimeStamp);
         string RandomString(int length);
     }

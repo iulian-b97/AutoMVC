@@ -15,9 +15,7 @@ export class AuthenticationInterceptor implements HttpInterceptor {
     private isRefreshing = false;
     private refreshTokenSubject: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
-    constructor(private tokenService: RefreshTokenService) {
-
-    }
+    constructor(private tokenService: RefreshTokenService) {}
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         let authReq = req 
@@ -46,25 +44,15 @@ export class AuthenticationInterceptor implements HttpInterceptor {
           const token = this.tokenService.getRefreshToken();
     
           if(token) {
-            //this.tokenService.refreshToken$ = new BehaviorSubject(this.tokenService.getRefreshTokenRequest())
-            //
-            //console.log(this.tokenService.refreshToken$.value)
-            var t = this.tokenService.getToken()
-            var rT = this.tokenService.getRefreshToken()
-            return this.tokenService.getRefreshTokensRequest(t, rT).pipe(
+            return this.tokenService.getRefreshTokensRequest().pipe(
               switchMap((token: any) => {
-                //
-                console.log('Here!!!!')
                 this.isRefreshing = false;
                 this.tokenService.updateToken(token.token);
                 this.tokenService.updateRefreshToken(token.refreshToken);
-                this.refreshTokenSubject.next(token.token);
-                
-                return next.handle(this.addTokenHeader(request, token.token));
+                this.refreshTokenSubject.next(token.token);   
+                return next.handle(this.addTokenHeader(request, token.token)); 
               }),
               catchError((err) => {
-                //
-                console.log('Here 2!!!!')
                 this.isRefreshing = false;
                 this.tokenService.signOut();
                 return throwError(err);
