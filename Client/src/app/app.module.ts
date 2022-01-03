@@ -6,7 +6,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContactComponent } from './common/contact/contact.component';
+import { CarAnnouncementComponent } from './common/home/announcement/car-announcement/car-announcement.component';
+import { MotorcycleAnnouncementComponent } from './common/home/announcement/motorcycle-announcement/motorcycle-announcement.component';
+import { TrailerAnnouncementComponent } from './common/home/announcement/trailer-announcement/trailer-announcement.component';
+import { TruckAnnouncementComponent } from './common/home/announcement/truck-announcement/truck-announcement.component';
+import { VanAnnouncementComponent } from './common/home/announcement/van-announcement/van-announcement.component';
 import { HomeComponent } from './common/home/home.component';
+import { SearchCarComponent } from './common/home/search/search-car/search-car.component';
+import { SearchMotorcycleComponent } from './common/home/search/search-motorcycle/search-motorcycle.component';
+import { SearchTrailerComponent } from './common/home/search/search-trailer/search-trailer.component';
+import { SearchTruckComponent } from './common/home/search/search-truck/search-truck.component';
+import { SearchVanComponent } from './common/home/search/search-van/search-van.component';
 import { NavBarComponent } from './common/nav/nav-bar.component';
 import { AuthenticationInterceptor } from './interceptors/authentication.interceptor';
 import { AuthenticationComponent } from './_identity-management/authentication/authentication.component';
@@ -35,7 +45,17 @@ import { DetailsAccountComponent } from './_identity-management/user-account/vie
     EditCountryComponent,
     EditNameComponent,
     EditPhoneComponent,
-    EditUsernameComponent
+    EditUsernameComponent,
+    SearchCarComponent,
+    SearchMotorcycleComponent,
+    SearchTruckComponent,
+    SearchVanComponent,
+    SearchTrailerComponent,
+    CarAnnouncementComponent,
+    MotorcycleAnnouncementComponent,
+    TruckAnnouncementComponent,
+    VanAnnouncementComponent,
+    TrailerAnnouncementComponent
   ],
   imports: [
     BrowserModule,

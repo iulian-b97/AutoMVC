@@ -1,0 +1,78 @@
+.container {
+    background-image: url('src/assets/images/porsche_panamera.jpg');
+    width: 100%;
+    height: 65%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding-top: 3%;
+}
+
+.search-box {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    margin-left: 5%;
+    box-shadow: rgb(0, 0, 0, 0.8) 0px 5px 15px;
+}
+
+.search-box-header {
+    display: flex;
+    width: 100%;
+    height: 12%;
+    background-color: white;  
+    justify-content: space-around;
+    align-items: center;
+}
+
+.button {
+    border: 1px solid black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.button a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    justify-content: space-between;
+}
+
+.button a:hover, .button a:focus {
+    color: rgb(28, 153, 161);  
+}
+
+
+.announcements-box {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    
+    padding-bottom: 2rem;
+}
+
+.announcements-box h1 {
+    padding: 3rem;
+    font-size: 6vh;
+}
+
+
+
+
+@media all and (max-width: 930px) {
+    .search-box {
+        width: 80%;
+        margin: auto;
+    }
+}
+
+@media only screen and (min-width:931px) and (max-width:1300px)  { 
+   .search-box {
+       width: 60%;
+       margin: auto;
+   }
+}
+

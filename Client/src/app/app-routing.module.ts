@@ -11,10 +11,24 @@ import { EditNameComponent } from './_identity-management/user-account/edit-acco
 import { EditPhoneComponent } from './_identity-management/user-account/edit-account/edit-phone/edit-phone.component';
 import { EditUsernameComponent } from './_identity-management/user-account/edit-account/edit-username/edit-username.component';
 import { AuthenticationComponent } from './_identity-management/authentication/authentication.component';
+import { SearchCarComponent } from './common/home/search/search-car/search-car.component';
+import { SearchMotorcycleComponent } from './common/home/search/search-motorcycle/search-motorcycle.component';
+import { SearchTruckComponent } from './common/home/search/search-truck/search-truck.component';
+import { SearchVanComponent } from './common/home/search/search-van/search-van.component';
+import { SearchTrailerComponent } from './common/home/search/search-trailer/search-trailer.component';
 
 const routes: Routes = [
-  { path:'', redirectTo:'/home', pathMatch:'full' },
-  { path: 'home', component: HomeComponent },
+  { path:'', redirectTo:'/home/search-car', pathMatch:'full' },
+  { 
+    path: 'home', component: HomeComponent, 
+    children: [
+      { path: 'search-car', component: SearchCarComponent },
+      { path: 'search-motorcycle', component: SearchMotorcycleComponent },
+      { path: 'search-truck', component: SearchTruckComponent },
+      { path: 'search-van', component: SearchVanComponent },
+      { path: 'search-trailer', component: SearchTrailerComponent }
+    ] 
+  },
   {
     path: 'user', component: AuthenticationComponent,
     children: [

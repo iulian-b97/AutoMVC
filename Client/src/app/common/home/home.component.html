@@ -1,1 +1,31 @@
-<h1>Home</h1>
+<section class="container">
+    <div class="search-box">
+        <div class="search-box-header">
+            <div class="button">
+                <a [ngStyle]="value == 0 && {'color': 'rgb(28, 153, 161)'}" routerLink="/home/search-car" (click)="isCar()"><i class="fas fa-car"></i><br> Car</a>
+            </div>
+            <div class="button">
+                <a [ngStyle]="value == 1 && {'color': 'rgb(28, 153, 161)'}" routerLink="/home/search-motorcycle" (click)="isMotorcycle()"><i class="fas fa-motorcycle"></i><br>Motorcycle</a>
+            </div>
+            <div class="button">
+                <a [ngStyle]="value == 2 && {'color': 'rgb(28, 153, 161)'}" routerLink="/home/search-truck" (click)="isTruck()"><i class="fas fa-truck"></i><br>Truck</a>
+            </div>
+            <div class="button">
+                <a [ngStyle]="value == 3 && {'color': 'rgb(28, 153, 161)'}" routerLink="/home/search-van" (click)="isVan()"><i class="fas fa-shuttle-van"></i><br>Van</a>
+            </div>
+            <div class="button">
+                <a [ngStyle]="value == 4 && {'color': 'rgb(28, 153, 161)'}" routerLink="/home/search-trailer" (click)="isTrailer()"><i class="fas fa-trailer"></i><br>Trailer</a>
+            </div>
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+</section>
+<section class="announcements-box">
+    <h1>Announcements of the day</h1>
+    <car-announcement *ngIf="value == 0"></car-announcement>
+    <motorcycle-announcement *ngIf="value == 1"></motorcycle-announcement>
+    <truck-announcement *ngIf="value == 2"></truck-announcement>
+    <van-announcement *ngIf="value == 3"></van-announcement>
+    <trailer-announcement *ngIf="value == 4"></trailer-announcement>
+</section>
+

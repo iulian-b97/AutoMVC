@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     ngOnInit(): void {
         if(localStorage.getItem('token') != null )
         {
-            this.router.navigateByUrl('/home')
+            this.router.navigateByUrl('/home/search-car')
         }
         
     }
@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
         this.authService.login(form.value).subscribe((res:any) => {
             localStorage.setItem('token', res.token)
             localStorage.setItem('refreshToken', res.refreshToken)
-            this.router.navigateByUrl('/home')
+            this.router.navigateByUrl('/home/search-car')
             localStorage.setItem('loggedIn', 'true')
             this.authService.isLoggedIn$.next(true)  
             
