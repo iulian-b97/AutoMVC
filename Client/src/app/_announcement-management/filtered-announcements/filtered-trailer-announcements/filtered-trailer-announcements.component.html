@@ -1,0 +1,87 @@
+<section class="background-box">
+
+</section>
+
+<section>
+    <div class="filters-box">
+        <ul>
+            <li>
+                <div class="one-input">
+                    <select>
+                        <option value="Country" selected disabled hidden>Country</option>
+                        <option value="Romanian">Romanian</option>
+                        <option value="Brazilia">Brazilia</option>
+                        <option value="France">France</option>
+                        <option value="Germany">Germany</option>
+                    </select>
+                </div>
+                
+                <div class="one-input">
+                    <select>
+                        <option value="Mark" selected disabled hidden>Mark</option>
+                        <option value="Mercedes Benz">Mercedes Benz</option>
+                        <option value="Audi">Audi</option>
+                        <option value="BMW">BMW</option>
+                        <option value="Jaguar">Jaguar</option>
+                    </select>
+                </div>
+                
+                <div class="one-input">
+                    <select>
+                        <option value="Model" selected disabled hidden>Model</option>
+                        <option value="A4">A4</option>
+                        <option value="A5">A5</option>
+                        <option value="A3">A3</option>
+                        <option value="Q7">Q7</option>
+                    </select>
+                </div>
+            </li>
+            <li>
+                <div class="one-input">
+                    <select>
+                        <option value="Model" selected disabled hidden>Body</option>
+                        <option value="A4">A4</option>
+                        <option value="A5">A5</option>
+                        <option value="A3">A3</option>
+                        <option value="Q7">Q7</option>
+                    </select>
+                </div>
+                
+                <div class="two-inputs">
+                    <select>
+                        <option value="FromYear" selected disabled hidden>From year</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                    </select>
+                    <select>
+                        <option value="ToYear" selected disabled hidden>To year</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                    </select>
+                </div>
+
+                <div class="two-inputs">
+                    <select>
+                        <option value="FromPrice" selected disabled hidden>From price</option>
+                        <option value="2020">5 000</option>
+                        <option value="2021">10 000</option>
+                    </select>
+                    <select>
+                        <option value="ToPrice" selected disabled hidden>To price</option>
+                        <option value="2021">12 000</option>
+                        <option value="2022">15 000</option>
+                    </select>
+                </div>
+            </li>
+        </ul>
+        <button class="search-btn" routerLink="/trailer-announcements"><i class="fas fa-search"></i> Search</button>
+    </div>
+</section>
+
+<section class="filtered-announcements">
+    <h1>Trailers - 10 000 deals</h1>
+    <a href="">All (10 000)</a>
+    <a href="">Second hand (9 000)</a>
+    <a href="">New (1 000)</a> <br> <br> <br> <br>
+    <trailer-announcement></trailer-announcement> 
+</section>

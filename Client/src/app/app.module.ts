@@ -6,11 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContactComponent } from './common/contact/contact.component';
-import { CarAnnouncementComponent } from './common/home/announcement/car-announcement/car-announcement.component';
-import { MotorcycleAnnouncementComponent } from './common/home/announcement/motorcycle-announcement/motorcycle-announcement.component';
-import { TrailerAnnouncementComponent } from './common/home/announcement/trailer-announcement/trailer-announcement.component';
-import { TruckAnnouncementComponent } from './common/home/announcement/truck-announcement/truck-announcement.component';
-import { VanAnnouncementComponent } from './common/home/announcement/van-announcement/van-announcement.component';
+
 import { HomeComponent } from './common/home/home.component';
 import { SearchCarComponent } from './common/home/search/search-car/search-car.component';
 import { SearchMotorcycleComponent } from './common/home/search/search-motorcycle/search-motorcycle.component';
@@ -19,6 +15,16 @@ import { SearchTruckComponent } from './common/home/search/search-truck/search-t
 import { SearchVanComponent } from './common/home/search/search-van/search-van.component';
 import { NavBarComponent } from './common/nav/nav-bar.component';
 import { AuthenticationInterceptor } from './interceptors/authentication.interceptor';
+import { CarAnnouncementComponent } from './_announcement-management/announcement/car-announcement/car-announcement.component';
+import { MotorcycleAnnouncementComponent } from './_announcement-management/announcement/motorcycle-announcement/motorcycle-announcement.component';
+import { TrailerAnnouncementComponent } from './_announcement-management/announcement/trailer-announcement/trailer-announcement.component';
+import { TruckAnnouncementComponent } from './_announcement-management/announcement/truck-announcement/truck-announcement.component';
+import { VanAnnouncementComponent } from './_announcement-management/announcement/van-announcement/van-announcement.component';
+import { FilteredCarAnnouncementsComponent } from './_announcement-management/filtered-announcements/filtered-car-announcements/filtered-car-announcements.component';
+import { FilteredMotorcycleAnnouncementsComponent } from './_announcement-management/filtered-announcements/filtered-motorcycle-announcements/filtered-motorcycle-announcements.component';
+import { FilteredTrailerAnnouncementsComponent } from './_announcement-management/filtered-announcements/filtered-trailer-announcements/filtered-trailer-announcements.component';
+import { FilteredTruckAnnouncementsComponent } from './_announcement-management/filtered-announcements/filtered-truck-announcements/filtered-truck-announcements.component';
+import { FilteredVanAnnouncementsComponent } from './_announcement-management/filtered-announcements/filtered-van-announcements/filtered-van-announcements.component';
 import { AuthenticationComponent } from './_identity-management/authentication/authentication.component';
 import { AuthenticationService } from './_identity-management/authentication/authentication.service';
 import { LoginComponent } from './_identity-management/authentication/login/login.component';
@@ -55,7 +61,12 @@ import { DetailsAccountComponent } from './_identity-management/user-account/vie
     MotorcycleAnnouncementComponent,
     TruckAnnouncementComponent,
     VanAnnouncementComponent,
-    TrailerAnnouncementComponent
+    TrailerAnnouncementComponent,
+    FilteredCarAnnouncementsComponent,
+    FilteredMotorcycleAnnouncementsComponent,
+    FilteredTruckAnnouncementsComponent,
+    FilteredVanAnnouncementsComponent,
+    FilteredTrailerAnnouncementsComponent
   ],
   imports: [
     BrowserModule,

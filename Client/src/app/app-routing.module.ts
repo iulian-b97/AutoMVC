@@ -16,6 +16,11 @@ import { SearchMotorcycleComponent } from './common/home/search/search-motorcycl
 import { SearchTruckComponent } from './common/home/search/search-truck/search-truck.component';
 import { SearchVanComponent } from './common/home/search/search-van/search-van.component';
 import { SearchTrailerComponent } from './common/home/search/search-trailer/search-trailer.component';
+import { FilteredCarAnnouncementsComponent } from './_announcement-management/filtered-announcements/filtered-car-announcements/filtered-car-announcements.component';
+import { FilteredMotorcycleAnnouncementsComponent } from './_announcement-management/filtered-announcements/filtered-motorcycle-announcements/filtered-motorcycle-announcements.component';
+import { FilteredTruckAnnouncementsComponent } from './_announcement-management/filtered-announcements/filtered-truck-announcements/filtered-truck-announcements.component';
+import { FilteredVanAnnouncementsComponent } from './_announcement-management/filtered-announcements/filtered-van-announcements/filtered-van-announcements.component';
+import { FilteredTrailerAnnouncementsComponent } from './_announcement-management/filtered-announcements/filtered-trailer-announcements/filtered-trailer-announcements.component';
 
 const routes: Routes = [
   { path:'', redirectTo:'/home/search-car', pathMatch:'full' },
@@ -29,6 +34,11 @@ const routes: Routes = [
       { path: 'search-trailer', component: SearchTrailerComponent }
     ] 
   },
+  { path: 'car-announcements', component: FilteredCarAnnouncementsComponent },
+  { path: 'motorcycle-announcements', component: FilteredMotorcycleAnnouncementsComponent },
+  { path: 'truck-announcements', component: FilteredTruckAnnouncementsComponent },
+  { path: 'van-announcements', component: FilteredVanAnnouncementsComponent },
+  { path: 'trailer-announcements', component: FilteredTrailerAnnouncementsComponent },
   {
     path: 'user', component: AuthenticationComponent,
     children: [
