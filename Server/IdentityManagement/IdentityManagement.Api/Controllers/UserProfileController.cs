@@ -75,7 +75,7 @@ namespace IdentityManagement.Api.Controllers
             return Ok(user);
         }
 
-        [HttpGet("userById")] 
+        [HttpGet("userById")]
         public async Task<IActionResult> GetUserById(string userId)
         {
             var getUser = new GetUserQuery() { UserId = userId };
@@ -89,4 +89,5 @@ namespace IdentityManagement.Api.Controllers
         }
     }
 }
+
 

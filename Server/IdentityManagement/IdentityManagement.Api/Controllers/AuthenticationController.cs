@@ -24,7 +24,7 @@ namespace IdentityManagement.Api.Controllers
         public async Task<IActionResult> Register([FromBody] UserRegistrationCommand userRegistrationCommand)
         {
             var response = await _mediator.Send(userRegistrationCommand);
-            if(response.Success)
+            if (response.Success)
             {
                 return Ok(response);
             }
@@ -40,7 +40,7 @@ namespace IdentityManagement.Api.Controllers
                 return Ok(response);
             }
             return BadRequest("Email or password is invalid.");
-        } 
+        }
 
         [HttpPost("refreshToken", Name = "RefreshToken")]
         public async Task<IActionResult> RefreshToken([FromBody] RefreshTokenCommand refreshTokenCommand)
@@ -50,7 +50,8 @@ namespace IdentityManagement.Api.Controllers
             {
                 return Ok(response);
             }
-            return BadRequest("Token could not be created."); 
+            return BadRequest("Token could not be created.");
         }
     }
 }
+
