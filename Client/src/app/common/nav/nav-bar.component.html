@@ -1,9 +1,9 @@
 <nav>
-    <a href="">
+    <a href="" (click)="removeLocalSt()">
         <img class="primary-icon" src="./assets/images/logo.png"/>
     </a> <br>
     <ul *ngIf="show">      
-        <li><a href=""><i class="fas fa-home"></i>Home</a></li>
+        <li><a href="" (click)="removeLocalSt()"><i class="fas fa-home"></i>Home</a></li>
         <li><a href=""><i class="fas fa-question-circle"></i>Contact</a></li>
         <li *ngIf="!isLogged()"><a routerLink="/user/login"><i class="fas fa-user"></i>Authentication</a></li>
         <li class="user-name" *ngIf="isLogged()">

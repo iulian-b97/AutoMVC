@@ -34,6 +34,10 @@ export class NavBarComponent {
     onLogout() {
         this.authService.logout();
         
-        return this.router.navigate(['/home']);
+        return this.router.navigate(['/home/search-car']);
+    }
+
+    removeLocalSt() {
+        localStorage.removeItem('value')
     }
 }

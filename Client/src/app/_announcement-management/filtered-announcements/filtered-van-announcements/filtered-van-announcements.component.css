@@ -1,0 +1,156 @@
+.background-box { 
+    width: 100%;
+    height: 50%;
+    background-image: url('src/assets/images/van-background.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.filters-box {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    width: 100%;
+    height: auto;
+    background-color: rgb(223, 217, 217);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.filters-box ul li {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 10px;
+}
+
+.filters-box ul {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+.one-input {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center;  
+    width: 50%;
+}
+
+.one-input select {
+    width: 100%; 
+    text-align: center;
+    
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 13px;
+    padding: 4px;
+    background-color: rgb(245, 235, 235);
+    border-radius: 5px; 
+    border: 2px solid black;
+}
+
+.two-inputs {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center; 
+    width: 50%;
+}
+
+.two-inputs select {
+    width: 100%; 
+    text-align: center; 
+    margin-left: 12px;
+    margin-right: 12px;
+    font-size: 13px;
+    padding: 4px;
+    background-color: rgb(245, 235, 235);  
+    border-radius: 5px; 
+    border: 2px solid black;
+}
+
+.search-btn {
+    width: auto;
+    background-color: red;
+    padding: 10px; 
+    font-size: 2vh;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    margin: auto;
+    border-radius: 5px;
+    margin:auto
+}
+
+.search-btn:hover {
+    background-color: rgb(192, 18, 18);
+}
+
+
+.filtered-announcements {
+    width: 95%;
+    padding-top: 70px;
+    padding-bottom: 20px;
+    margin: auto;
+}
+
+.filtered-announcements h1 {
+    font-size: 40px;
+    padding-bottom: 10px;
+}
+
+.filtered-announcements a {
+    text-decoration: none;
+    margin-right: 20px;
+    color: black;
+    font-weight: bold;
+    font-size: 2.5vh;
+}
+
+
+@media all and (max-width: 766px) {
+    .background-box {
+        height: 30%;
+    }
+
+    .filters-box ul li {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+    }
+    
+    .filters-box ul li select {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .filters-box ul {
+        margin: auto
+    }
+
+    .search-btn {
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (min-width:767px) and (max-width:950px)  { 
+    .filters-box ul li {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+    }
+    
+    .filters-box ul li select {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .filters-box ul {
+        margin: auto
+    }
+
+    .search-btn {
+        margin-bottom: 10px;
+    }
+}

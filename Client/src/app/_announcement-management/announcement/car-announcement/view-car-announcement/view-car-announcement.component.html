@@ -1,0 +1,57 @@
+<section class="container">
+    <div>
+        <h3>Car > Country > Mark > Model</h3>
+        
+        
+        
+        
+        <div class="slide-box">    
+            <div class="image-box-1">
+                <i (click)="decIndex()" class="fas fa-chevron-left"></i>
+                <div class="image-slide">
+                    <img *ngIf="index == 1" src="./assets/images/rubicon1.jpg">
+                    <img *ngIf="index == 2" src="./assets/images/rubicon2.jpg">
+                    <img *ngIf="index == 3" src="./assets/images/rubicon3.jpg">
+                    <img *ngIf="index == 4" src="./assets/images/rubicon4.jpg">
+                    <img *ngIf="index == 5" src="./assets/images/rubicon5.jpg">
+                </div>
+                <i (click)="incIndex()" class="fas fa-chevron-right"></i>    
+            </div>
+            <div class="image-box-2">
+                <div class="small-image-box">
+                    <img [ngStyle]="index == 1 && {'opacity': '0.5'}" src="./assets/images/rubicon1.jpg">
+                </div>
+                <div class="small-image-box">
+                    <img [ngStyle]="index == 2 && {'opacity': '0.5'}" src="./assets/images/rubicon2.jpg">
+                </div>
+                <div class="small-image-box">
+                    <img [ngStyle]="index == 3 && {'opacity': '0.5'}" src="./assets/images/rubicon3.jpg">
+                </div>
+                <div class="small-image-box">
+                    <img [ngStyle]="index == 4 && {'opacity': '0.5'}" src="./assets/images/rubicon4.jpg">
+                </div>
+                <div class="small-image-box">
+                    <img [ngStyle]="index == 5 && {'opacity': '0.5'}" src="./assets/images/rubicon5.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="details-box">
+        <h2>Announcement title</h2>
+
+        <h1>Price</h1>
+        
+        <div class="car-details">
+            <label><i class="fas fa-road"></i> Km</label>
+            <label><i class="far fa-calendar-alt"></i> Year</label>
+            <label><i class="fas fa-horse-head"></i> HP</label>
+            <label><i class="fas fa-gas-pump"></i> Fuel type</label>
+        </div>
+        
+        <div class="seller-details">
+            <button class="email-btn"><i class="fas fa-envelope"></i> Send email</button>
+            <button class="phone-btn"><i class="fas fa-phone"></i> Phone number</button>
+        </div>
+        
+    </div>
+</section>
