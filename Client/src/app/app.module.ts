@@ -16,6 +16,7 @@ import { SearchVanComponent } from './common/home/search/search-van/search-van.c
 import { NavBarComponent } from './common/nav/nav-bar.component';
 import { AuthenticationInterceptor } from './interceptors/authentication.interceptor';
 import { CarAnnouncementComponent } from './_announcement-management/announcement/car-announcement/car-announcement.component';
+import { ViewCarAnnouncementComponent } from './_announcement-management/announcement/car-announcement/view-car-announcement/view-car-announcement.component';
 import { MotorcycleAnnouncementComponent } from './_announcement-management/announcement/motorcycle-announcement/motorcycle-announcement.component';
 import { TrailerAnnouncementComponent } from './_announcement-management/announcement/trailer-announcement/trailer-announcement.component';
 import { TruckAnnouncementComponent } from './_announcement-management/announcement/truck-announcement/truck-announcement.component';
@@ -66,7 +67,8 @@ import { DetailsAccountComponent } from './_identity-management/user-account/vie
     FilteredMotorcycleAnnouncementsComponent,
     FilteredTruckAnnouncementsComponent,
     FilteredVanAnnouncementsComponent,
-    FilteredTrailerAnnouncementsComponent
+    FilteredTrailerAnnouncementsComponent,
+    ViewCarAnnouncementComponent
   ],
   imports: [
     BrowserModule,
