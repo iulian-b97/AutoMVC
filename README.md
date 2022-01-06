@@ -1,5 +1,4 @@
 # AutoMVC (.NET Core & Angular)[Completely receptive]
-# !!! The application is still under development. It is not yet complete.
 
 #
    Technology and libraries used: 
@@ -30,6 +29,16 @@
     3. Messaging management part: it is responsible for the communication part between the user and the admin for reporting 
                                   a problem in the contact form, but also for the communication part between the buyer and 
                                   the seller.
+
+#
+# Home page
+![alt text](https://github.com/iulian-b97/AutoMVC/blob/main/_screens/s7.jpg)
+#
+![alt text](https://github.com/iulian-b97/AutoMVC/blob/main/_screens/s8.jpg)
+
+#
+# View announcement page
+![alt text](https://github.com/iulian-b97/AutoMVC/blob/main/_screens/s9.jpg)
 
 #
 # Login form
