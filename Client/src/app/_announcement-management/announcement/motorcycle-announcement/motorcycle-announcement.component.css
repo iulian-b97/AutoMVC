@@ -14,6 +14,7 @@
 
 .announcement-box:hover {
     box-shadow: rgb(0, 0, 0, 0.8) 0px 5px 15px;
+    opacity: 0.9;
 }
 
 .image-announcement {
@@ -80,31 +81,38 @@
 @media all and (max-width: 767px) {
     .announcement-box {
         flex-direction: column;
-        height: 350px;
-    }
-
-    .image-announcement {
-        width: 70%;
-        height: 180px;
-        margin: auto;
-    }
-
-    .details-announcement {
-        width: 100%;
-    }
-    
-}
-
-@media only screen and (min-width:768px) and (max-width:950px)  { 
-    .announcement-box {
-        flex-direction: column;
         height: 400px;
     }
 
     .image-announcement {
         width: 70%;
-        height: 50%;
+        height: 220px;
         margin: auto;
+    }
+
+    .image-announcement img {
+        height: 220px;
+    }
+
+    .details-announcement {
+        width: 100%;
+    }  
+}
+
+@media only screen and (min-width:768px) and (max-width:1000px)  { 
+    .announcement-box {
+        flex-direction: column;
+        height: 450px;
+    }
+
+    .image-announcement {
+        width: 70%;
+        height: 65%;
+        margin: auto;
+    }
+
+    .image-announcement img {
+        height: 250px;
     }
 
     .details-announcement {

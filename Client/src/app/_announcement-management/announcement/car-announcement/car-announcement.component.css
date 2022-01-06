@@ -1,7 +1,7 @@
 .announcement-box {
     display: flex;
     width: 80%;
-    height: 180px;
+    height: 200px;
     border: 2px solid black;
     border-radius: 5px; 
     box-shadow: rgba(160, 143, 143, 0.8) 0px 2px 15px;
@@ -14,6 +14,7 @@
 
 .announcement-box:hover {
     box-shadow: rgb(0, 0, 0, 0.8) 0px 5px 15px;
+    opacity: 0.9;
 }
 
 .image-announcement {
@@ -36,7 +37,7 @@
 
 .announcement-title {
     margin-left: 1rem;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
@@ -63,7 +64,7 @@
     font-weight: bold;
     font-size: 2.5vh;
     margin-left: 1rem;
-    margin-top: 0.7rem;
+    margin-top: 1.3rem;
     float: left;
 }
 
@@ -73,29 +74,11 @@
     color: red;
     float: right;
     margin-right: 2rem;
-    margin-top: 0.7rem;
+    margin-top: 1.3rem;
 }
 
 
 @media all and (max-width: 767px) {
-    .announcement-box {
-        flex-direction: column;
-        height: 350px;
-    }
-
-    .image-announcement {
-        width: 70%;
-        height: 180px;
-        margin: auto;
-    }
-
-    .details-announcement {
-        width: 100%;
-    }
-    
-}
-
-@media only screen and (min-width:768px) and (max-width:950px)  { 
     .announcement-box {
         flex-direction: column;
         height: 400px;
@@ -103,8 +86,41 @@
 
     .image-announcement {
         width: 70%;
-        height: 50%;
+        height: 220px;
         margin: auto;
+    }
+
+    .image-announcement img {
+        height: 220px;
+    }
+
+    .details-announcement {
+        width: 100%;
+    }  
+
+    .country-announcement {
+        margin-top: 0.7rem;
+    }
+    
+    .price-announcement {
+        margin-top: 0.7rem;
+    }
+}
+
+@media only screen and (min-width:768px) and (max-width:1000px)  { 
+    .announcement-box {
+        flex-direction: column;
+        height: 450px;
+    }
+
+    .image-announcement {
+        width: 70%;
+        height: 65%;
+        margin: auto;
+    }
+
+    .image-announcement img {
+        height: 250px;
     }
 
     .details-announcement {

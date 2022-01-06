@@ -1,32 +1,33 @@
 <section class="container">
-     
+    
+           
         <div class="slide-box">    
             <div class="image-box-1">
                 <i (click)="decIndex()" class="fas fa-chevron-left"></i>
                 <div class="image-slide">
-                    <img *ngIf="index == 1" src="./assets/images/rubicon1.jpg">
-                    <img *ngIf="index == 2" src="./assets/images/rubicon2.jpg">
-                    <img *ngIf="index == 3" src="./assets/images/rubicon3.jpg">
-                    <img *ngIf="index == 4" src="./assets/images/rubicon4.jpg">
-                    <img *ngIf="index == 5" src="./assets/images/rubicon5.jpg">
+                    <img *ngIf="index == 1" src="./assets/images/kawasaki2.jpg">
+                    <img *ngIf="index == 2" src="./assets/images/kawasaki1.jpg">
+                    <img *ngIf="index == 3" src="./assets/images/kawasaki3.jpg">
+                    <img *ngIf="index == 4" src="./assets/images/kawasaki4.jpg">
+                    <img *ngIf="index == 5" src="./assets/images/kawasaki5.jpg">
                 </div>
                 <i (click)="incIndex()" class="fas fa-chevron-right"></i>    
             </div>
             <div class="image-box-2">
                 <div class="small-image-box">
-                    <img [ngStyle]="index == 1 && {'opacity': '0.5'}" src="./assets/images/rubicon1.jpg">
+                    <img [ngStyle]="index == 1 && {'opacity': '0.5'}" src="./assets/images/kawasaki2.jpg">
                 </div>
                 <div class="small-image-box">
-                    <img [ngStyle]="index == 2 && {'opacity': '0.5'}" src="./assets/images/rubicon2.jpg">
+                    <img [ngStyle]="index == 2 && {'opacity': '0.5'}" src="./assets/images/kawasaki1.jpg">
                 </div>
                 <div class="small-image-box">
-                    <img [ngStyle]="index == 3 && {'opacity': '0.5'}" src="./assets/images/rubicon3.jpg">
+                    <img [ngStyle]="index == 3 && {'opacity': '0.5'}" src="./assets/images/kawasaki3.jpg">
                 </div>
                 <div class="small-image-box">
-                    <img [ngStyle]="index == 4 && {'opacity': '0.5'}" src="./assets/images/rubicon4.jpg">
+                    <img [ngStyle]="index == 4 && {'opacity': '0.5'}" src="./assets/images/kawasaki4.jpg">
                 </div>
                 <div class="small-image-box">
-                    <img [ngStyle]="index == 5 && {'opacity': '0.5'}" src="./assets/images/rubicon5.jpg">
+                    <img [ngStyle]="index == 5 && {'opacity': '0.5'}" src="./assets/images/kawasaki5.jpg">
                 </div>
             </div>
         </div>
@@ -38,7 +39,6 @@
             <label><i class="fas fa-road"></i> Km</label>
             <label><i class="far fa-calendar-alt"></i> Year</label>
             <label><i class="fas fa-horse-head"></i> HP</label>
-            <label><i class="fas fa-gas-pump"></i> Fuel type</label>
         </div>
         <div class="seller-details">
             <button class="email-btn"><i class="fas fa-envelope"></i> Send email</button>
@@ -55,22 +55,14 @@
             <label>Model</label>
             <label>Year</label>  
             <label>Color body</label>
-            <label>Paint</label>
             <label>Body</label> 
-            <label>Number doors</label>        
-            <label>Number seats</label>        
-            <label>Weight</label>
         </div>
         <div class="align-spans">
-            <span>Jeep</span> 
-            <span>Rubicon</span> 
-            <span>2017</span> 
-            <span>Orange</span> 
-            <span>Mettalic</span> 
-            <span>Suv</span> 
-            <span>3</span> 
-            <span>4</span> 
-            <span>1924</span>
+            <span>Kawasaki</span> 
+            <span>Z Gen</span> 
+            <span>2018</span> 
+            <span>Grey</span> 
+            <span>Supermoto</span> 
         </div>    
     </div>
     <div class="features">              

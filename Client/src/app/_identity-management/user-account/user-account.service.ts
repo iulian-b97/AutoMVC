@@ -19,9 +19,9 @@ export class UserAccountService extends IdentityService {
         { 
             this.user.userName = Object.values(JSON.parse(localStorage.getItem('user')))[0]?.toString()
             this.user.email = Object.values(JSON.parse(localStorage.getItem('user')))[1]?.toString()
-            this.user.phoneNumber = Object.values(JSON.parse(localStorage.getItem('user')))[4]?.toString()
+            this.user.firstName = Object.values(JSON.parse(localStorage.getItem('user')))[4]?.toString()  
             this.user.country = Object.values(JSON.parse(localStorage.getItem('user')))[3]?.toString()
-            this.user.firstName = Object.values(JSON.parse(localStorage.getItem('user')))[2]?.toString()
+            this.user.phoneNumber = Object.values(JSON.parse(localStorage.getItem('user')))[2]?.toString()
             this.user.lastName = Object.values(JSON.parse(localStorage.getItem('user')))[5]?.toString()          
         }   
     }

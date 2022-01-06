@@ -18,6 +18,7 @@ import { AuthenticationInterceptor } from './interceptors/authentication.interce
 import { CarAnnouncementComponent } from './_announcement-management/announcement/car-announcement/car-announcement.component';
 import { ViewCarAnnouncementComponent } from './_announcement-management/announcement/car-announcement/view-car-announcement/view-car-announcement.component';
 import { MotorcycleAnnouncementComponent } from './_announcement-management/announcement/motorcycle-announcement/motorcycle-announcement.component';
+import { ViewMororcycleAnnouncementComponent } from './_announcement-management/announcement/motorcycle-announcement/view-motorcycle-announcement/view-motorcycle-announcement.component';
 import { TrailerAnnouncementComponent } from './_announcement-management/announcement/trailer-announcement/trailer-announcement.component';
 import { TruckAnnouncementComponent } from './_announcement-management/announcement/truck-announcement/truck-announcement.component';
 import { VanAnnouncementComponent } from './_announcement-management/announcement/van-announcement/van-announcement.component';
@@ -68,7 +69,8 @@ import { DetailsAccountComponent } from './_identity-management/user-account/vie
     FilteredTruckAnnouncementsComponent,
     FilteredVanAnnouncementsComponent,
     FilteredTrailerAnnouncementsComponent,
-    ViewCarAnnouncementComponent
+    ViewCarAnnouncementComponent,
+    ViewMororcycleAnnouncementComponent
   ],
   imports: [
     BrowserModule,
