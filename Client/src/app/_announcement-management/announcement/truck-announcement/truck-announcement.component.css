@@ -1,19 +1,19 @@
 .announcement-box {
     display: flex;
-    width: 80%;
-    height: 180px;
-    border: 2px solid black;
+    width: 85%;
+    height: 200px;
+    border: 1px solid rgba(37, 37, 37, 0.555);
     border-radius: 5px; 
-    box-shadow: rgba(160, 143, 143, 0.8) 0px 2px 15px;
+    box-shadow: rgba(184, 184, 184, 0.8) 0px 2px 15px;
     cursor: pointer;
-    background-color: rgb(245, 235, 235); 
+    background-color: rgb(235, 235, 235);
     margin: auto;
     margin-bottom: 3rem;
     text-align: left;
 }
 
 .announcement-box:hover {
-    box-shadow: rgb(0, 0, 0, 0.8) 0px 5px 15px;
+    box-shadow: rgb(0, 0, 0, 0.8) 0px 2px 15px;
     opacity: 0.9;
 }
 
@@ -37,7 +37,7 @@
 
 .announcement-title {
     margin-left: 1rem;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
@@ -64,7 +64,7 @@
     font-weight: bold;
     font-size: 2.5vh;
     margin-left: 1rem;
-    margin-top: 0.7rem;
+    margin-top: 1.3rem;
     float: left;
 }
 
@@ -74,7 +74,7 @@
     color: red;
     float: right;
     margin-right: 2rem;
-    margin-top: 0.7rem;
+    margin-top: 1.3rem;
 }
 
 
@@ -97,6 +97,14 @@
     .details-announcement {
         width: 100%;
     }  
+
+    .country-announcement {
+        margin-top: 0.7rem;
+    }
+    
+    .price-announcement {
+        margin-top: 0.7rem;
+    }
 }
 
 @media only screen and (min-width:768px) and (max-width:1000px)  { 

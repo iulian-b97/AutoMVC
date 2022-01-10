@@ -1,0 +1,113 @@
+<section class="container">
+    <div class="slide-box">    
+        <div class="image-box-1">
+            <i (click)="decIndex()" class="fas fa-chevron-left"></i>
+            <div class="image-slide">
+                <img *ngIf="index == 1" src="./assets/images/transit1.jpg">
+                <img *ngIf="index == 2" src="./assets/images/transit2.jpg">
+                <img *ngIf="index == 3" src="./assets/images/transit3.jpg">
+                <img *ngIf="index == 4" src="./assets/images/transit4.jpg">
+                <img *ngIf="index == 5" src="./assets/images/transit5.jpg">
+            </div>
+            <i (click)="incIndex()" class="fas fa-chevron-right"></i>    
+        </div>
+        <div class="image-box-2">
+            <div class="small-image-box">
+                <img [ngStyle]="index == 1 && {'opacity': '0.5'}" src="./assets/images/transit1.jpg">
+            </div>
+            <div class="small-image-box">
+                <img [ngStyle]="index == 2 && {'opacity': '0.5'}" src="./assets/images/transit2.jpg">
+            </div>
+            <div class="small-image-box">
+                <img [ngStyle]="index == 3 && {'opacity': '0.5'}" src="./assets/images/transit3.jpg">
+            </div>
+            <div class="small-image-box">
+                <img [ngStyle]="index == 4 && {'opacity': '0.5'}" src="./assets/images/transit4.jpg">
+            </div>
+            <div class="small-image-box">
+                <img [ngStyle]="index == 5 && {'opacity': '0.5'}" src="./assets/images/transit5.jpg">
+            </div>
+        </div>
+    </div>   
+<div class="details-box">
+    <h2>Announcement title</h2>
+    <h1>Price</h1>      
+    <div class="car-details">
+        <label><i class="fas fa-road"></i> Km</label>
+        <label><i class="far fa-calendar-alt"></i> Year</label>
+        <label><i class="fas fa-horse-head"></i> HP</label>
+        <label><i class="fas fa-gas-pump"></i> Fuel type</label>
+    </div>
+    <div class="seller-details">
+        <button class="email-btn"><i class="fas fa-envelope"></i> Send email</button>
+        <button class="phone-btn"><i class="fas fa-phone"></i> Phone number</button>
+    </div> 
+</div>
+</section>
+
+<section class="details-vehicle-box"> 
+<div class="features">
+    <div class="align-labels">
+        <h3>Characteristics</h3>
+        <label>Mark</label>
+        <label>Model</label>
+        <label>Year</label>  
+        <label>Color body</label>
+        <label>Paint</label>
+        <label>Body</label> 
+        <label>Number doors</label>        
+        <label>Number seats</label>        
+        <label>Weight</label>
+    </div>
+    <div class="align-spans">
+        <span>Ford</span> 
+        <span>Transit</span> 
+        <span>2017</span> 
+        <span>White</span> 
+        <span>Mettalic</span> 
+        <span>Pick-up</span> 
+        <span>3</span> 
+        <span>2</span> 
+        <span>1533</span>
+    </div>    
+</div>
+<div class="features">              
+    <div class="align-labels">
+        <h3>Engine</h3>
+        <label>Gearbox</label> 
+        <label>Speeds</label> 
+        <label>Cm3</label>    
+        <label>Cylinders</label>      
+        <label>Traction</label>
+    </div>
+    <div class="align-spans">
+        <span>Manual</span> 
+        <span>6</span> 
+        <span>2000</span> 
+        <span>4</span> 
+        <span>Back</span>
+    </div>
+</div>
+<div class="features">
+    <div class="align-labels">
+        <h3>Condition</h3>
+        <label>Condition</label>
+    </div>
+    <div class="align-spans">
+        <span>Second hand</span>
+    </div>
+</div>
+</section>
+
+<section class="description-box">
+<h1>Description</h1>
+<div class="text-box">
+    <p>
+        The year 1967 saw the first major changes to the Mustang. 
+        The car grew in length, width, and weight, primarily to allow the installation of a big-block engine. 
+        The 390-cid (6.4-liter) V-8 produced 335 hp, displacing the 289 as the top performer. 
+        Interior and exterior trim was revised, and a new 302-cid (4.9-liter) V-8 replaced the higher-horsepower 289s. 
+        For drag racing, Ford offered a 428-cid (7.0-liter) Cobra Jet V-8 rated at 335 hp and 440 lb-ft of torque.
+    </p>
+</div>
+</section>

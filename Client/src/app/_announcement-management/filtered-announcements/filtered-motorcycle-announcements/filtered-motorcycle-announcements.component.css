@@ -114,6 +114,20 @@
         height: 30%;
     }
 
+    .filters-box ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .one-input { 
+        width: 90%;
+    }
+    
+    .two-inputs {
+        width: 90%;
+    }
+
     .filters-box ul li {
         margin-top: 10px;
         margin-bottom: 10px;

@@ -1,19 +1,19 @@
 .announcement-box {
     display: flex;
-    width: 80%;
+    width: 85%;
     height: 200px;
-    border: 2px solid black;
+    border: 1px solid rgba(37, 37, 37, 0.555);
     border-radius: 5px; 
-    box-shadow: rgba(160, 143, 143, 0.8) 0px 2px 15px;
+    box-shadow: rgba(184, 184, 184, 0.8) 0px 2px 15px;
     cursor: pointer;
-    background-color: rgb(245, 235, 235); 
+    background-color: rgb(235, 235, 235);
     margin: auto;
     margin-bottom: 3rem;
     text-align: left;
 }
 
 .announcement-box:hover {
-    box-shadow: rgb(0, 0, 0, 0.8) 0px 5px 15px;
+    box-shadow: rgb(0, 0, 0, 0.8) 0px 2px 15px;
     opacity: 0.9;
 }
 

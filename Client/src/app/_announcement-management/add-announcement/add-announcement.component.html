@@ -1,0 +1,16 @@
+<section class="container">
+    <select class="category-btn" (change)="selectChangeHandler($event)">
+        <option value="Car">Car</option>
+        <option value="Motorcycle">Motorcycle</option>
+        <option value="Truck">Truck</option>
+        <option value="Van">Van</option>
+        <option value="Trailer">Trailer</option>
+    </select>
+    <add-car *ngIf="selected == 'Car'"></add-car>
+    <add-motorcycle *ngIf="selected == 'Motorcycle'"></add-motorcycle>
+    <add-truck *ngIf="selected == 'Truck'"></add-truck>
+    <add-van *ngIf="selected == 'Van'"></add-van>
+    <add-trailer *ngIf="selected == 'Trailer'"></add-trailer>
+</section>
+
+<router-outlet></router-outlet>

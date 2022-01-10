@@ -22,7 +22,13 @@ import { FilteredTruckAnnouncementsComponent } from './_announcement-management/
 import { FilteredVanAnnouncementsComponent } from './_announcement-management/filtered-announcements/filtered-van-announcements/filtered-van-announcements.component';
 import { FilteredTrailerAnnouncementsComponent } from './_announcement-management/filtered-announcements/filtered-trailer-announcements/filtered-trailer-announcements.component';
 import { ViewCarAnnouncementComponent } from './_announcement-management/announcement/car-announcement/view-car-announcement/view-car-announcement.component';
-import { ViewMororcycleAnnouncementComponent } from './_announcement-management/announcement/motorcycle-announcement/view-motorcycle-announcement/view-motorcycle-announcement.component';
+import { ViewMotorcycleAnnouncementComponent } from './_announcement-management/announcement/motorcycle-announcement/view-motorcycle-announcement/view-motorcycle-announcement.component';
+import { ViewTruckAnnouncementComponent } from './_announcement-management/announcement/truck-announcement/view-truck-announcement/view-truck-announcement.component';
+import { ViewVanAnnouncementComponent } from './_announcement-management/announcement/van-announcement/view-van-announcement/view-van-announcement.component';
+import { ViewTrailerAnnouncementComponent } from './_announcement-management/announcement/trailer-announcement/view-trailer-announcement/view-trailer-announcement.component';
+import { AddAnnouncementComponent } from './_announcement-management/add-announcement/add-announcement.component';
+import { AddCarAnnouncementComponent } from './_announcement-management/announcement/car-announcement/add-car-announcement/add-car-announcement.component';
+
 
 const routes: Routes = [
   { path:'', redirectTo:'/home/search-car', pathMatch:'full' },
@@ -42,12 +48,18 @@ const routes: Routes = [
   { path: 'van-announcements', component: FilteredVanAnnouncementsComponent },
   { path: 'trailer-announcements', component: FilteredTrailerAnnouncementsComponent },
   { path: 'view-car-announcement', component: ViewCarAnnouncementComponent },
-  { path: 'view-motorcycle-announcement', component: ViewMororcycleAnnouncementComponent },
+  { path: 'view-motorcycle-announcement', component: ViewMotorcycleAnnouncementComponent },
+  { path: 'view-truck-announcement', component: ViewTruckAnnouncementComponent },
+  { path: 'view-van-announcement', component: ViewVanAnnouncementComponent },
+  { path: 'view-trailer-announcement', component: ViewTrailerAnnouncementComponent },
   {
-    path: 'user', component: AuthenticationComponent,
+    path: 'add-announcement', component: AddAnnouncementComponent, canActivate:[AuthGuard]
+  },
+  {
+    path: 'user', component: AuthenticationComponent, 
     children: [
-      { path: 'login', component:LoginComponent }, 
-      { path: 'register', component:RegisterComponent }
+      { path: 'login', component: LoginComponent }, 
+      { path: 'register', component: RegisterComponent }
     ]
   },
   { 

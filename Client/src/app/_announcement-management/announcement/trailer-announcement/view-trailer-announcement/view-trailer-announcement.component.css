@@ -1,0 +1,252 @@
+.container {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.container h3 {
+    color: black;
+    font-size: 15px;
+}
+
+.slide-box {
+    width: 80%;
+    height: 500px;
+    margin: auto;
+    background-color: rgb(224, 224, 228);
+    box-shadow: rgba(160, 143, 143, 0.864) 0px 5px 15px;
+}
+
+.image-box-1 {
+    display: flex;
+    width: 100%;
+    height: 400px;
+}
+
+.image-box-1 i {
+    font-size: 50px;
+    color: rgb(73, 72, 72);
+    margin: auto;
+    cursor: pointer;
+}
+
+.image-box-1 i:hover {
+    color: rgb(0, 0, 0);
+}
+
+.image-slide {
+    width: 80%;
+}
+
+.image-slide img {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+.image-box-2 {
+    display: flex;
+    height: 100px;
+    border-top: 1px solid black;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.image-box-2 img {
+    width: 100%;
+    height: 100%;
+}
+
+.small-image-box {
+    width: auto;
+    margin: 5px;
+    height: auto;
+    flex-grow: 1;
+    border: 1px solid black;
+    background-color: white;
+}
+
+.details-box {
+    width: 40%;
+    margin-left: 5%;
+    padding: 20px;
+}
+
+.details-box h2 {
+    font-size: 3vh;
+    padding-bottom: 20px;
+}
+
+.details-box h1 {
+    color: red;
+    font-size: 4vh;
+    padding-bottom: 40px;
+}
+
+.car-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.car-details label {
+    color: rgb(73, 72, 72);
+    font-weight: bold;
+    font-size: 3vh;
+    padding-bottom: 20px;
+}
+
+.seller-details {
+    padding-top: 20px;
+}
+
+.email-btn {
+    margin-right: 20px;
+    background-color: firebrick;
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.email-btn:hover {
+    background-color: rgb(247, 17, 17);
+    transition: 0.5s;
+}
+
+.phone-btn {
+    background-color: green;
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.phone-btn:hover {
+    background-color: rgb(8, 185, 8);
+    transition: 0.5s;
+}
+
+.details-vehicle-box {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.features {
+    display: flex; 
+    flex-direction: row;
+    margin: 50px;
+}
+
+.features h3 {
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+
+.features label {
+    color: rgb(73, 72, 72);
+    font-size: 20px;
+    font-style: oblique;
+    margin-left: 10px;
+    margin-right: 100px;
+}
+
+.features span {
+    font-size: 20px;
+}
+
+.align-labels {
+    display: flex; 
+    flex-direction: column;
+}
+
+.align-spans {
+    display: flex; 
+    flex-direction: column; 
+    padding-top: 35px;
+}
+
+.description-box {
+    width: 90%;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 20px;
+}
+
+.description-box h1 {
+    font-size: 25px;
+}
+
+.text-box {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.text-box p {
+    font-size: 18px;
+}
+
+
+
+@media all and (max-width: 767px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .slide-box {
+        width: 100%;
+        height: 350px;
+        margin-bottom: 10px;
+    }
+
+    .image-box-1 {
+        height: 250px;
+    }
+
+    .image-box-1 i {
+        font-size: 30px;
+    }
+
+    .seller-details button {
+        margin-top: 10px;
+    }
+
+    .details-box {
+        width: 90%;
+        margin: auto;
+    }
+}
+
+@media only screen and (min-width:768px) and (max-width:1100px)  { 
+    .container {
+        flex-direction: column;
+    }
+
+    .slide-box {
+        height: 450px;
+        margin-bottom: 10px;
+    }
+
+    .image-box-1 {
+        height: 350px;
+    }
+
+    .details-box {
+        width: 90%;
+        margin: auto;
+    }
+}
+
+

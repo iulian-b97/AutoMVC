@@ -4,7 +4,7 @@ import { Component } from "@angular/core";
     templateUrl: './view-motorcycle-announcement.component.html',
     styleUrls: ['./view-motorcycle-announcement.component.css']
 })
-export class ViewMororcycleAnnouncementComponent {
+export class ViewMotorcycleAnnouncementComponent {
     index: number = 1
 
     decIndex() {

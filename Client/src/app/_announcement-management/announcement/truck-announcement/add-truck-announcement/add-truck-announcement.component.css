@@ -1,0 +1,169 @@
+.details-form {
+    margin: auto;
+    width: 80%;
+    margin-top: 40px;
+    background-color: rgb(235, 235, 235);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-shadow: rgba(160, 143, 143, 0.466) 0px 5px 15px;
+    padding: 5px;
+    border: 1px solid dimgray;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    margin: auto;
+    margin: 20px;
+    text-align: center;
+}
+
+.input-group label {
+    font-weight: bold;
+    padding: 5px;
+    font-size: 18px
+}
+
+.input-group input, .input-group select {
+    font-size: 15px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.short-description {
+    margin: auto;
+    width: 80%;
+    margin-top: 40px;
+    background-color: rgb(235, 235, 235);
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(160, 143, 143, 0.466) 0px 5px 15px;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid dimgray;
+    padding-bottom: 20px;
+}
+
+.short-description label {
+    font-weight: bold;
+    padding: 5px;
+    font-size: 18px
+}
+
+.short-description input {
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.long-description {
+    margin: auto;
+    width: 80%;
+    margin-top: 40px;
+    background-color: rgb(235, 235, 235);
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(160, 143, 143, 0.466) 0px 5px 15px;     
+    padding: 5px;
+    border: 1px solid dimgray;  
+    padding-bottom: 20px;
+}
+
+.long-description label {
+    font-weight: bold;
+    padding: 5px;
+    font-size: 18px
+}
+
+.long-description textarea {
+    width: 95%;
+    height: 300px;
+    margin: auto;
+    font-size: 17px;
+    padding: 5px;
+}
+
+.price-box {
+    margin: auto;
+    width: 25%;
+    margin-top: 40px;
+    background-color: rgb(235, 235, 235);
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(160, 143, 143, 0.466) 0px 5px 15px; 
+    padding: 5px;
+    border: 1px solid dimgray;
+    padding-bottom: 10px;
+}
+
+.price-box label {
+    font-weight: bold;
+    padding: 5px;
+    font-size: 18px;
+    color: red;
+}
+
+.price-box input {
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-weight: bold;
+}
+
+.sell-btn {
+    width: auto;
+    background-color: rgb(28, 153, 161);
+    color: #ffffff; 
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px; 
+    border-radius: 5px;
+    border: solid 2px #555252;
+    cursor: pointer;
+}
+
+.sell-btn:hover {
+    background-color: turquoise;
+    transition: 0.5s;
+}
+
+.btn-box {
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+@media all and (max-width: 1020px) {
+    .input-group {
+        width: 100%;
+    }
+
+    .price-box {
+        width: 40%;
+    }
+
+    .sell-btn {
+        width: auto;
+        background-color: rgb(28, 153, 161);
+        color: #ffffff; 
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
+}
+
+
+
+

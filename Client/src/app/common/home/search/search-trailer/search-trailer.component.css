@@ -39,7 +39,7 @@
     margin-right: 15px;
     font-size: 13px;
     padding: 4px;
-    background-color: rgb(245, 235, 235);
+    background-color: rgb(235, 235, 235);
     border-radius: 5px; 
     border: 2px solid black;
 }
@@ -60,7 +60,7 @@
     margin-right: 12px;
     font-size: 13px;
     padding: 4px;
-    background-color: rgb(245, 235, 235);  
+    background-color: rgb(235, 235, 235);  
     border-radius: 5px; 
     border: 2px solid black;
 }
@@ -80,5 +80,27 @@
 
 .search-btn:hover {
     background-color: rgb(192, 18, 18);
+}
+
+
+
+@media all and (max-width: 600px) {
+    .search-box-content ul li {
+        flex-direction: column;
+        padding: 0.15rem;
+    }
+
+    .one-input {
+        width: 100%;
+    }
+
+    .two-inputs {
+        width: 100%;
+    }
+
+    .search-btn {
+        margin-top: 1%;
+        font-size: 15px;
+    }
 }
 
