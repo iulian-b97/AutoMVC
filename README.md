@@ -18,42 +18,68 @@
 #
   AutoMVC is a web platform dedicated to the field of sales, specifically car sales. 
 #
-  The application is divided into 3 parts: (Only the first of the three parts is completed, namely the identity management part.)
+  The application is divided into 3 parts: 
 # 
-    1. Identity management part: it is responsible for the user authentication and registration part as well as the role 
-                                 management part. For the server side I used IdentityServer 4 with JWT Token and RefreshToken.  
+    1. Identity management part: it is responsible for the user authentication and registration 
+                                 part as well as the role management part. For the server side 
+                                 I used IdentityServer 4 with JWT Token and RefreshToken.  
 #    
-    2. The part for the management of sales ads: it is responsible for the part of viewing, adding and editing the car sale ads 
-                                                 , but also for the part of filtering the desired sale ads.
+    2. The part for the management of sales ads: it is responsible for the part of viewing, 
+                                                 adding and editing the car sale ads, but 
+                                                 also for the part of filtering the desired 
+                                                 sale ads.
 #
-    3. Messaging management part: it is responsible for the communication part between the user and the admin for reporting 
-                                  a problem in the contact form, but also for the communication part between the buyer and 
-                                  the seller.
+    3. Messaging management part: it is responsible for the communication part between the 
+                                  user and the admin for reporting a problem in the contact
+                                  form, but also for the communication part between the buyer
+                                  and the seller.
 
 #
-# Home page
-![alt text](https://github.com/iulian-b97/AutoMVC/blob/main/_screens/s7.jpg)
+# 1.Home page
+     DESKTOP RESOLUTION
+![alt text](https://github.com/iulian-b97/AutoMVC/blob/main/_screens/s1_1.jpg)
+![alt text](https://github.com/iulian-b97/AutoMVC/blob/main/_screens/s2_1.jpg)
 #
-![alt text](https://github.com/iulian-b97/AutoMVC/blob/main/_screens/s8.jpg)
+     MOBILE RESOLUTION
+![alt text](https://github.com/iulian-b97/AutoMVC/blob/main/_screens/s1_2.jpg)
+![alt text](https://github.com/iulian-b97/AutoMVC/blob/main/_screens/s2_2.jpg)
 
 #
-# View announcement page
-![alt text](https://github.com/iulian-b97/AutoMVC/blob/main/_screens/s9.jpg)
+#
+# 2.View car announcement 
+     DESKTOP RESOLUTION
+![alt text](https://github.com/iulian-b97/AutoMVC/blob/main/_screens/s3_1.jpg)
+![alt text](https://github.com/iulian-b97/AutoMVC/blob/main/_screens/s4_1.jpg)
+#
+     MOBILE RESOLUTION
+![alt text](https://github.com/iulian-b97/AutoMVC/blob/main/_screens/s3_2.jpg)
+![alt text](https://github.com/iulian-b97/AutoMVC/blob/main/_screens/s4_2.jpg)
 
 #
-# Login form
-![alt text](https://github.com/iulian-b97/AutoMVC/blob/main/_screens/s1.png)
-![alt text](https://github.com/iulian-b97/AutoMVC/blob/main/_screens/s1_mobile.png)
+#
+# 3.Filtered car announcements 
+     DESKTOP RESOLUTION
+![alt text](https://github.com/iulian-b97/AutoMVC/blob/main/_screens/s5_1.jpg)
+![alt text](https://github.com/iulian-b97/AutoMVC/blob/main/_screens/s6_1.jpg)
+#
+     MOBILE RESOLUTION
+![alt text](https://github.com/iulian-b97/AutoMVC/blob/main/_screens/s5_2.jpg)
+![alt text](https://github.com/iulian-b97/AutoMVC/blob/main/_screens/s6_2.jpg)
 
 #
-# Register form
-![alt text](https://github.com/iulian-b97/AutoMVC/blob/main/_screens/s2.png)
-![alt text](https://github.com/iulian-b97/AutoMVC/blob/main/_screens/s3_mobile.png)
+#
+# 4.Authentication page
+     DESKTOP RESOLUTION
+![alt text](https://github.com/iulian-b97/AutoMVC/blob/main/_screens/s7_1.jpg)
+#
+     MOBILE RESOLUTION
+![alt text](https://github.com/iulian-b97/AutoMVC/blob/main/_screens/s7_2.jpg)
 
 #
-# Navbar before logging in
-![alt text](https://github.com/iulian-b97/AutoMVC/blob/main/_screens/s2_mobile.png)
-
-# Navbar after logging in
-![alt text](https://github.com/iulian-b97/AutoMVC/blob/main/_screens/s5_mobile.png)
-![alt text](https://github.com/iulian-b97/AutoMVC/blob/main/_screens/s6_mobile.png)
+#
+# 5.User account page
+     DESKTOP RESOLUTION
+![alt text](https://github.com/iulian-b97/AutoMVC/blob/main/_screens/s8_1.jpg)
+#
+     MOBILE RESOLUTION
+![alt text](https://github.com/iulian-b97/AutoMVC/blob/main/_screens/s8_2.jpg)
