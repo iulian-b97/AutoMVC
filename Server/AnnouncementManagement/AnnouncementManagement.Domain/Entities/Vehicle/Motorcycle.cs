@@ -1,11 +1,7 @@
 ﻿using AnnouncementManagement.Domain.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace AnnouncementManagement.Domain.Entities
+
+namespace AnnouncementManagement.Domain.Entities.Vehicle
 {
     public class Motorcycle : CommonVehicle
     {
@@ -13,5 +9,8 @@ namespace AnnouncementManagement.Domain.Entities
         public int HP { get; set; }
         public int Cm3 { get; set; }
         public string Gearbox { get; set; }
+
+        public virtual string AnnouncementId { get; set; }
+        public virtual Announcement Announcement { get; set; }
     }
 }

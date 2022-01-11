@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+
 
 namespace AnnouncementManagement.Domain.Entities
 {
@@ -13,5 +10,7 @@ namespace AnnouncementManagement.Domain.Entities
         public string Email { get; set; }
         public string Phone { get; set; }
         public string Country { get; set; }
+
+        public virtual ICollection<Announcement> Announcements { get; set; }
     }
 }
