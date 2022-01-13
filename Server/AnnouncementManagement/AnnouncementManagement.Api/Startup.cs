@@ -1,3 +1,4 @@
+using AnnouncementManagement.Application;
 using AnnouncementManagement.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -22,6 +23,7 @@ namespace AnnouncementManagement.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddPersistenceServices(Configuration);
+            services.AddApplicationServices();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

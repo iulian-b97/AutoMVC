@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\IdentityManagement\IdentityManagement.Infrastructure\IdentityManagement.Infrastructure.csproj" />
+    <ProjectReference Include="..\AnnouncementManagement.Application\AnnouncementManagement.Application.csproj" />
     <ProjectReference Include="..\AnnouncementManagement.Infrastructure\AnnouncementManagement.Infrastructure.csproj" />
   </ItemGroup>
 
