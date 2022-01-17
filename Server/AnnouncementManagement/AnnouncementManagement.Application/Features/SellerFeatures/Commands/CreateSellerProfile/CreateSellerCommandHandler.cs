@@ -1,8 +1,5 @@
-﻿using AnnouncementManagement.Domain.Entities;
-using AnnouncementManagement.Infrastructure.Persistence;
-using AutoMapper;
+﻿using AnnouncementManagement.Application.Contracts.Persistence;
 using MediatR;
-using System;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -10,31 +7,16 @@ namespace AnnouncementManagement.Application.Features.SellerProfile.Commands.Add
 {
     public class CreateSellerCommandHandler : IRequestHandler<CreateSellerCommand, SellerDto>
     {
-        private readonly IMapper _mapper;
-        private readonly AnnouncementContext _context;
+        private readonly IAnnouncementRepository _repository;
 
-        public CreateSellerCommandHandler(IMapper mapper, AnnouncementContext context)
+        public CreateSellerCommandHandler(IAnnouncementRepository repository)
         {
-            _mapper = mapper;
-            _context = context;
+            _repository = repository;
         }
 
         public async Task<SellerDto> Handle(CreateSellerCommand request, CancellationToken cancellationToken)
         {
-            Seller seller = new Seller
-            {
-                Username = request.Seller.Username,
-                Email = request.Seller.Email,
-                Phone = request.Seller.Phone,
-                Country = request.Seller.Country
-            };
-
-            seller.Id = Guid.NewGuid().ToString();
-
-            await _context.Sellers.AddAsync(seller);
-            await _context.SaveChangesAsync();
-
-            return _mapper.Map<SellerDto>(seller);
+            return await _repository.AddSeller(request.Seller);
         }
     }
 }

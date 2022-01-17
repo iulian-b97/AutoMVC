@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AnnouncementManagement.Domain\AnnouncementManagement.Domain.csproj" />
+    <ProjectReference Include="..\AnnouncementManagement.Application\AnnouncementManagement.Application.csproj" />
   </ItemGroup>
 
 </Project>

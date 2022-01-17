@@ -14,7 +14,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AnnouncementManagement.Domain\AnnouncementManagement.Domain.csproj" />
-    <ProjectReference Include="..\AnnouncementManagement.Infrastructure\AnnouncementManagement.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

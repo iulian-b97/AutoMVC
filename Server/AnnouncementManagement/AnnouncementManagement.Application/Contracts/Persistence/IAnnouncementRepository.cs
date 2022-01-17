@@ -5,24 +5,19 @@ using AnnouncementManagement.Application.Features.AnnouncementFeatures.Commands.
 using AnnouncementManagement.Application.Features.AnnouncementFeatures.Commands.CreateAnnouncement.CreateVanAnnouncement;
 using AnnouncementManagement.Application.Features.SellerProfile.Commands.AddSellerProfile;
 using AnnouncementManagement.Application.Models.Responses.AnnouncementResponses;
-using AnnouncementManagement.Domain.Entities;
-using AnnouncementManagement.Domain.Entities.Vehicle;
-using AutoMapper;
+using System.Threading.Tasks;
 
 
-namespace AnnouncementManagement.Application.Profiles
+namespace AnnouncementManagement.Application.Contracts.Persistence
 {
-    public class MappingProfile : Profile
+    public interface IAnnouncementRepository 
     {
-        public MappingProfile()
-        {
-            CreateMap<Seller, SellerDto>();
-            CreateMap<Announcement, AnnouncementResponse>();
-            CreateMap<Car, CarDto>();
-            CreateMap<Motorcycle, MotorcycleDto>();
-            CreateMap<Truck, TruckDto>();
-            CreateMap<Van, VanDto>();
-            CreateMap<Trailer, TrailerDto>();
-        }
+        Task<SellerDto> AddSeller(SellerDto model);
+        Task<AnnouncementResponse> AddAnnouncement(AnnouncementDto model);
+        Task<CarDto> AddCar(CarDto model, string announcementId);
+        Task<MotorcycleDto> AddMotorcycle(MotorcycleDto model, string announcementId);
+        Task<TruckDto> AddTruck(TruckDto model, string announcementId);
+        Task<VanDto> AddVan(VanDto model, string announcementId);
+        Task<TrailerDto> AddTrailer(TrailerDto model, string announcementId);
     }
 }
