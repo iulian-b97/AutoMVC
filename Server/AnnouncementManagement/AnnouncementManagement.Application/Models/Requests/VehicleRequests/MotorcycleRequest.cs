@@ -1,6 +1,12 @@
-﻿namespace AnnouncementManagement.Application.Features.AnnouncementFeatures.Commands.CreateAnnouncement.CreateMotorcycleAnnouncement
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AnnouncementManagement.Application.Models.Requests.VehicleRequests
 {
-    public class MotorcycleDto
+    public class MotorcycleRequest
     {
         public string Mark { get; set; }
         public string Model { get; set; }

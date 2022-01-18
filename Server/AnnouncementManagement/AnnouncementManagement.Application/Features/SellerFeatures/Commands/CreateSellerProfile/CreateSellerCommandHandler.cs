@@ -1,22 +1,29 @@
 ﻿using AnnouncementManagement.Application.Contracts.Persistence;
+using AnnouncementManagement.Application.Features.SellerFeatures.Commands.CreateSellerProfile;
+using AnnouncementManagement.Application.Models.Responses;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace AnnouncementManagement.Application.Features.SellerProfile.Commands.AddSellerProfile
 {
-    public class CreateSellerCommandHandler : IRequestHandler<CreateSellerCommand, SellerDto>
+    public class CreateSellerCommandHandler : IRequestHandler<CreateSellerCommand, CreateSellerCommandResponse>
     {
-        private readonly IAnnouncementRepository _repository;
+        private readonly ISellerRepository _repository;
 
-        public CreateSellerCommandHandler(IAnnouncementRepository repository)
+        public CreateSellerCommandHandler(ISellerRepository repository)
         {
             _repository = repository;
         }
 
-        public async Task<SellerDto> Handle(CreateSellerCommand request, CancellationToken cancellationToken)
+        public async Task<CreateSellerCommandResponse> Handle(CreateSellerCommand request, CancellationToken cancellationToken)
         {
-            return await _repository.AddSeller(request.Seller);
+            CreateSellerCommandResponse createSellerCommandResponse = new CreateSellerCommandResponse();
+
+            SellerResponse seller = await _repository.CreateSeller(request.Seller);
+            createSellerCommandResponse.Seller = seller;
+
+            return createSellerCommandResponse;
         }
     }
 }

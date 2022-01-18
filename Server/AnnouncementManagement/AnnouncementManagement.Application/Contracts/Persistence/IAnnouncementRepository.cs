@@ -1,23 +1,18 @@
-﻿using AnnouncementManagement.Application.Features.AnnouncementFeatures.Commands.CreateAnnouncement.CreateCarAnnouncement;
-using AnnouncementManagement.Application.Features.AnnouncementFeatures.Commands.CreateAnnouncement.CreateMotorcycleAnnouncement;
-using AnnouncementManagement.Application.Features.AnnouncementFeatures.Commands.CreateAnnouncement.CreateTrailerAnnouncement;
-using AnnouncementManagement.Application.Features.AnnouncementFeatures.Commands.CreateAnnouncement.CreateTruckAnnouncement;
-using AnnouncementManagement.Application.Features.AnnouncementFeatures.Commands.CreateAnnouncement.CreateVanAnnouncement;
-using AnnouncementManagement.Application.Features.SellerProfile.Commands.AddSellerProfile;
-using AnnouncementManagement.Application.Models.Responses.AnnouncementResponses;
+﻿using AnnouncementManagement.Application.Models.Requests;
+using AnnouncementManagement.Application.Models.Responses;
+using AnnouncementManagement.Domain.Entities;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 
 namespace AnnouncementManagement.Application.Contracts.Persistence
 {
-    public interface IAnnouncementRepository 
+    public interface IAnnouncementRepository : IBaseRepository<Announcement>
     {
-        Task<SellerDto> AddSeller(SellerDto model);
-        Task<AnnouncementResponse> AddAnnouncement(AnnouncementDto model);
-        Task<CarDto> AddCar(CarDto model, string announcementId);
-        Task<MotorcycleDto> AddMotorcycle(MotorcycleDto model, string announcementId);
-        Task<TruckDto> AddTruck(TruckDto model, string announcementId);
-        Task<VanDto> AddVan(VanDto model, string announcementId);
-        Task<TrailerDto> AddTrailer(TrailerDto model, string announcementId);
+        Task<IEnumerable<Announcement>> GetAllAnnouncementsAsync();
+        Task<Announcement> GetAnnouncementByIdAsync(string announcementId);
+        Task<AnnouncementResponse> CreateAnnouncement(AnnouncementRequest request);
+        void UpdateAnnouncement(Announcement announcement);
+        void DeleteAnnouncement(Announcement announcement);
     }
 }

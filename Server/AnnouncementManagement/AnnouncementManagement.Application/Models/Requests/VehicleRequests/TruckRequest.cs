@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AnnouncementManagement.Application.Features.AnnouncementFeatures.Commands.CreateAnnouncement.CreateCarAnnouncement
+namespace AnnouncementManagement.Application.Models.Requests.VehicleRequests
 {
-    public class CarDto
+    public class TruckRequest
     {
         public string Mark { get; set; }
         public string Model { get; set; }

@@ -2,6 +2,7 @@ using AnnouncementManagement.Application;
 using AnnouncementManagement.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,6 +25,8 @@ namespace AnnouncementManagement.Api
         {
             services.AddPersistenceServices(Configuration);
             services.AddApplicationServices();
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

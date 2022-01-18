@@ -16,4 +16,8 @@
     <ProjectReference Include="..\AnnouncementManagement.Domain\AnnouncementManagement.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\SellerFeatures\Queries\GetListSellerProfiles\" />
+  </ItemGroup>
+
 </Project>

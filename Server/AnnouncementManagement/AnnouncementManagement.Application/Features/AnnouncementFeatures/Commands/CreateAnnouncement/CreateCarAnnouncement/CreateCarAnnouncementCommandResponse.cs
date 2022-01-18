@@ -1,8 +1,11 @@
-﻿namespace AnnouncementManagement.Application.Features.AnnouncementFeatures.Commands.CreateAnnouncement.CreateCarAnnouncement
+﻿using AnnouncementManagement.Application.Models.Responses;
+using AnnouncementManagement.Application.Models.Responses.VehicleResponses;
+
+namespace AnnouncementManagement.Application.Features.AnnouncementFeatures.Commands.CreateAnnouncement.CreateCarAnnouncement
 {
     public class CreateCarAnnouncementCommandResponse
     {
-        public AnnouncementDto Announcement { get; set; }
-        public CarDto Car { get; set; }
+        public AnnouncementResponse Announcement { get; set; }
+        public CarResponse Car { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using AnnouncementManagement.Application.Features.AnnouncementFeatures.Commands.CreateAnnouncement.CreateCarAnnouncement;
+﻿using AnnouncementManagement.Application.Models.Requests;
+using AnnouncementManagement.Application.Models.Requests.VehicleRequests;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace AnnouncementManagement.Application.Features.AnnouncementFeatures.Comma
 {
     public class CreateTrailerAnnouncementCommand : IRequest<CreateTrailerAnnouncementCommandResponse>
     {
-        public AnnouncementDto Announcement { get; set; }
-        public TrailerDto Trailer { get; set; }
+        public AnnouncementRequest Announcement { get; set; }
+        public TrailerRequest Trailer { get; set; }
     }
 }

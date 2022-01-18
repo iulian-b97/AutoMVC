@@ -3,7 +3,9 @@ using AnnouncementManagement.Application.Features.AnnouncementFeatures.Commands.
 using AnnouncementManagement.Application.Features.AnnouncementFeatures.Commands.CreateAnnouncement.CreateTrailerAnnouncement;
 using AnnouncementManagement.Application.Features.AnnouncementFeatures.Commands.CreateAnnouncement.CreateTruckAnnouncement;
 using AnnouncementManagement.Application.Features.AnnouncementFeatures.Commands.CreateAnnouncement.CreateVanAnnouncement;
+using AnnouncementManagement.Application.Features.AnnouncementFeatures.Queries.GetAnnouncement;
 using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -15,7 +17,7 @@ namespace AnnouncementManagement.Api.Controllers
     {
         private readonly IMediator _mediator;
 
-        public AnnouncementController(IMediator mediator)
+        public AnnouncementController(IMediator mediator, IHttpContextAccessor httpContextAccessor)
         {
             _mediator = mediator;
         }
@@ -49,7 +51,6 @@ namespace AnnouncementManagement.Api.Controllers
         public async Task<IActionResult> AddTruckAnnouncement([FromBody] CreateTruckAnnouncementCommand createTruckAnnouncementCommand)
         {
             var response = await _mediator.Send(createTruckAnnouncementCommand);
-
             if (response != null)
             {
                 return Ok(response);
@@ -79,6 +80,19 @@ namespace AnnouncementManagement.Api.Controllers
                 return Ok(response);
             }
             return BadRequest("Trailer announcement doesn`t exist.");
+        }
+
+
+        [HttpGet("getAnnouncement", Name = "GetAnnouncement")]
+        public async Task<IActionResult> GetAnnouncement(string announcementId)
+        {
+            var response = await _mediator.Send(new GetAnnouncementQuery());
+
+            if (response != null)
+            {
+                return Ok(response);
+            }
+            return BadRequest("Announcement doesn`t exist.");
         }
     }
 }

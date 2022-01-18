@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AnnouncementManagement.Application.Features.AnnouncementFeatures.Commands.CreateAnnouncement.CreateVanAnnouncement
+namespace AnnouncementManagement.Application.Models.Requests.VehicleRequests
 {
-    public class VanDto
+    public class CarRequest
     {
         public string Mark { get; set; }
         public string Model { get; set; }
@@ -15,6 +15,7 @@ namespace AnnouncementManagement.Application.Features.AnnouncementFeatures.Comma
         public string ColorBody { get; set; }
         public int Km { get; set; }
         public int HP { get; set; }
+        public string FuelType { get; set; }
         public int Cm3 { get; set; }
         public string Gearbox { get; set; }
         public int Speeds { get; set; }

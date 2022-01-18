@@ -1,5 +1,6 @@
 ﻿using AnnouncementManagement.Application.Contracts.Persistence;
-using AnnouncementManagement.Application.Models.Responses.AnnouncementResponses;
+using AnnouncementManagement.Application.Contracts.Persistence.VehicleRepositories;
+using AnnouncementManagement.Application.Models.Responses;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
@@ -8,20 +9,22 @@ namespace AnnouncementManagement.Application.Features.AnnouncementFeatures.Comma
 {
     public class CreateCarAnnouncementCommandHandler : IRequestHandler<CreateCarAnnouncementCommand, CreateCarAnnouncementCommandResponse>
     {
-        private readonly IAnnouncementRepository _repository;
+        private readonly IAnnouncementRepository _announcementRepo;
+        private readonly ICarRepository _carRepo;
 
-        public CreateCarAnnouncementCommandHandler(IAnnouncementRepository repository) 
+        public CreateCarAnnouncementCommandHandler(IAnnouncementRepository announcementRepo, ICarRepository carRepo) 
         {
-            _repository = repository;
+            _announcementRepo = announcementRepo;
+            _carRepo = carRepo;
         }
 
         public async Task<CreateCarAnnouncementCommandResponse> Handle(CreateCarAnnouncementCommand request, CancellationToken cancellationToken)
         {
             CreateCarAnnouncementCommandResponse createCarCommandResponse = new CreateCarAnnouncementCommandResponse();
 
-            AnnouncementResponse announcement = await _repository.AddAnnouncement(request.Announcement);
+            AnnouncementResponse announcement = await _announcementRepo.CreateAnnouncement(request.Announcement);
             createCarCommandResponse.Announcement = announcement;
-            createCarCommandResponse.Car = await _repository.AddCar(request.Car, announcement.Id);
+            createCarCommandResponse.Car = await _carRepo.CreateCar(request.Car);
 
             return createCarCommandResponse;
         }

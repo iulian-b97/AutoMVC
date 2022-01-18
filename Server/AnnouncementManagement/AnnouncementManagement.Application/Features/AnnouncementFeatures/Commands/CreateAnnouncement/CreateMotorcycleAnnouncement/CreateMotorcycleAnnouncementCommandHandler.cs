@@ -1,5 +1,6 @@
 ﻿using AnnouncementManagement.Application.Contracts.Persistence;
-using AnnouncementManagement.Application.Models.Responses.AnnouncementResponses;
+using AnnouncementManagement.Application.Contracts.Persistence.VehicleRepositories;
+using AnnouncementManagement.Application.Models.Responses;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
@@ -8,20 +9,23 @@ namespace AnnouncementManagement.Application.Features.AnnouncementFeatures.Comma
 {
     public class CreateMotorcycleAnnouncementCommandHandler : IRequestHandler<CreateMotorcycleAnnouncementCommand, CreateMotorcycleAnnouncementCommandResponse>
     {
-        private readonly IAnnouncementRepository _repository;
+        private readonly IAnnouncementRepository _announcementRepo;
+        private readonly IMotorcycleRepository _motorcycleRepo;
 
-        public CreateMotorcycleAnnouncementCommandHandler(IAnnouncementRepository repository)
+        public CreateMotorcycleAnnouncementCommandHandler(IAnnouncementRepository announcementRepo, IMotorcycleRepository motorcycleRepo)
         {
-            _repository = repository;
+            
+            _announcementRepo = announcementRepo;
+            _motorcycleRepo = motorcycleRepo;
         }
 
         public async Task<CreateMotorcycleAnnouncementCommandResponse> Handle(CreateMotorcycleAnnouncementCommand request, CancellationToken cancellationToken)
         {
             CreateMotorcycleAnnouncementCommandResponse createMotorcycleCommandResponse = new CreateMotorcycleAnnouncementCommandResponse();
 
-            AnnouncementResponse announcement = await _repository.AddAnnouncement(request.Announcement);
+            AnnouncementResponse announcement = await _announcementRepo.CreateAnnouncement(request.Announcement);
             createMotorcycleCommandResponse.Announcement = announcement;
-            createMotorcycleCommandResponse.Motorcycle = await _repository.AddMotorcycle(request.Motorcycle, announcement.Id);
+            createMotorcycleCommandResponse.Motorcycle = await _motorcycleRepo.CreateMotorcycle(request.Motorcycle);
 
             return createMotorcycleCommandResponse;
         }

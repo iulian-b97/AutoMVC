@@ -1,11 +1,12 @@
-﻿using AnnouncementManagement.Application.Features.AnnouncementFeatures.Commands.CreateAnnouncement.CreateCarAnnouncement;
+﻿using AnnouncementManagement.Application.Models.Requests;
+using AnnouncementManagement.Application.Models.Requests.VehicleRequests;
 using MediatR;
 
 namespace AnnouncementManagement.Application.Features.AnnouncementFeatures.Commands.CreateAnnouncement.CreateMotorcycleAnnouncement
 {
     public class CreateMotorcycleAnnouncementCommand : IRequest<CreateMotorcycleAnnouncementCommandResponse>
     {
-        public AnnouncementDto Announcement { get; set; }
-        public MotorcycleDto Motorcycle { get; set; }
+        public AnnouncementRequest Announcement { get; set; }
+        public MotorcycleRequest Motorcycle { get; set; }
     }
 }

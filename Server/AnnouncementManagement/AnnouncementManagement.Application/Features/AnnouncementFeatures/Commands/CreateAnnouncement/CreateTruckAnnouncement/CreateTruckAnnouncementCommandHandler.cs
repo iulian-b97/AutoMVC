@@ -1,5 +1,6 @@
 ﻿using AnnouncementManagement.Application.Contracts.Persistence;
-using AnnouncementManagement.Application.Models.Responses.AnnouncementResponses;
+using AnnouncementManagement.Application.Contracts.Persistence.VehicleRepositories;
+using AnnouncementManagement.Application.Models.Responses;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
@@ -8,20 +9,22 @@ namespace AnnouncementManagement.Application.Features.AnnouncementFeatures.Comma
 {
     public class CreateTruckAnnouncementCommandHandler : IRequestHandler<CreateTruckAnnouncementCommand, CreateTruckAnnouncementCommandResponse>
     {
-        private readonly IAnnouncementRepository _repository;
+        private readonly IAnnouncementRepository _announcementRepo;
+        private readonly ITruckRepository _truckRepo;
 
-        public CreateTruckAnnouncementCommandHandler(IAnnouncementRepository repository)
+        public CreateTruckAnnouncementCommandHandler(IAnnouncementRepository announcementRepo, ITruckRepository truckRepo)
         {
-            _repository = repository;
+            _announcementRepo = announcementRepo;
+            _truckRepo = truckRepo;
         }
 
         public async Task<CreateTruckAnnouncementCommandResponse> Handle(CreateTruckAnnouncementCommand request, CancellationToken cancellationToken)
         {
             CreateTruckAnnouncementCommandResponse createTruckCommandResponse = new CreateTruckAnnouncementCommandResponse();
 
-            AnnouncementResponse announcement = await _repository.AddAnnouncement(request.Announcement);
+            AnnouncementResponse announcement = await _announcementRepo.CreateAnnouncement(request.Announcement);
             createTruckCommandResponse.Announcement = announcement;
-            createTruckCommandResponse.Truck = await _repository.AddTruck(request.Truck, announcement.Id);
+            createTruckCommandResponse.Truck = await _truckRepo.CreateTruck(request.Truck);
 
             return createTruckCommandResponse;
         }

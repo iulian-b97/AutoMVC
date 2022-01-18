@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\IdentityManagement\IdentityManagement.Domain\IdentityManagement.Domain.csproj" />
     <ProjectReference Include="..\AnnouncementManagement.Application\AnnouncementManagement.Application.csproj" />
   </ItemGroup>
 
