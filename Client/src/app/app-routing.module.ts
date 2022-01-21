@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './common/home/home.component';
+import { HomeComponent } from './_announcement-management/home/home.component';
 import { AuthGuard } from './auth/auth.guard';
 import { LoginComponent } from './_identity-management/authentication/login/login.component';
 import { RegisterComponent } from './_identity-management/authentication/register/register.component';
@@ -11,11 +11,11 @@ import { EditNameComponent } from './_identity-management/user-account/edit-acco
 import { EditPhoneComponent } from './_identity-management/user-account/edit-account/edit-phone/edit-phone.component';
 import { EditUsernameComponent } from './_identity-management/user-account/edit-account/edit-username/edit-username.component';
 import { AuthenticationComponent } from './_identity-management/authentication/authentication.component';
-import { SearchCarComponent } from './common/home/search/search-car/search-car.component';
-import { SearchMotorcycleComponent } from './common/home/search/search-motorcycle/search-motorcycle.component';
-import { SearchTruckComponent } from './common/home/search/search-truck/search-truck.component';
-import { SearchVanComponent } from './common/home/search/search-van/search-van.component';
-import { SearchTrailerComponent } from './common/home/search/search-trailer/search-trailer.component';
+import { SearchCarComponent } from './_announcement-management/home/search-car/search-car.component';
+import { SearchMotorcycleComponent } from './_announcement-management/home/search-motorcycle/search-motorcycle.component';
+import { SearchTruckComponent } from './_announcement-management/home/search-truck/search-truck.component';
+import { SearchVanComponent } from './_announcement-management/home/search-van/search-van.component';
+import { SearchTrailerComponent } from './_announcement-management/home/search-trailer/search-trailer.component';
 import { FilteredCarAnnouncementsComponent } from './_announcement-management/filtered-announcements/filtered-car-announcements/filtered-car-announcements.component';
 import { FilteredMotorcycleAnnouncementsComponent } from './_announcement-management/filtered-announcements/filtered-motorcycle-announcements/filtered-motorcycle-announcements.component';
 import { FilteredTruckAnnouncementsComponent } from './_announcement-management/filtered-announcements/filtered-truck-announcements/filtered-truck-announcements.component';
@@ -27,7 +27,6 @@ import { ViewTruckAnnouncementComponent } from './_announcement-management/annou
 import { ViewVanAnnouncementComponent } from './_announcement-management/announcement/van-announcement/view-van-announcement/view-van-announcement.component';
 import { ViewTrailerAnnouncementComponent } from './_announcement-management/announcement/trailer-announcement/view-trailer-announcement/view-trailer-announcement.component';
 import { AddAnnouncementComponent } from './_announcement-management/add-announcement/add-announcement.component';
-import { AddCarAnnouncementComponent } from './_announcement-management/announcement/car-announcement/add-car-announcement/add-car-announcement.component';
 
 
 const routes: Routes = [
