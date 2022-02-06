@@ -1,6 +1,7 @@
 ﻿using AnnouncementManagement.Application.Contracts.Persistence;
 using AnnouncementManagement.Application.Contracts.Persistence.VehicleRepositories;
 using AnnouncementManagement.Application.Models.Responses;
+using AnnouncementManagement.Application.Models.Responses.VehicleResponses;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
@@ -22,10 +23,24 @@ namespace AnnouncementManagement.Application.Features.AnnouncementFeatures.Comma
         {
             CreateTrailerAnnouncementCommandResponse createTrailerCommandResponse = new CreateTrailerAnnouncementCommandResponse();
 
-            /*
-            AnnouncementResponse announcement = await _announcementRepo.CreateAnnouncement(request.Announcement);
-            createTrailerCommandResponse.Announcement = announcement;
-            createTrailerCommandResponse.Trailer = await _trailerRepo.CreateTrailer(request.Trailer); */
+            AnnouncementResponse announcement = new AnnouncementResponse
+            {
+                Title = request.Title,
+                Description = request.Description,
+                Price = request.Price
+            };
+            TrailerResponse trailer = new TrailerResponse
+            {
+                Mark = request.Mark,
+                Model = request.Model,
+                Year = request.Year,
+                Body = request.Body,
+                ColorBody = request.ColorBody,
+                NumberDoors = request.NumberDoors
+            };
+
+            createTrailerCommandResponse.Announcement = await _announcementRepo.CreateAnnouncement(announcement);
+            createTrailerCommandResponse.Trailer = await _trailerRepo.CreateTrailer(trailer);
 
             return createTrailerCommandResponse;
         }

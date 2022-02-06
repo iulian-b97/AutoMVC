@@ -1,6 +1,7 @@
 ﻿using AnnouncementManagement.Application.Contracts.Persistence;
 using AnnouncementManagement.Application.Contracts.Persistence.VehicleRepositories;
 using AnnouncementManagement.Application.Models.Responses;
+using AnnouncementManagement.Application.Models.Responses.VehicleResponses;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
@@ -22,9 +23,35 @@ namespace AnnouncementManagement.Application.Features.AnnouncementFeatures.Comma
         {
             CreateCarAnnouncementCommandResponse createCarCommandResponse = new CreateCarAnnouncementCommandResponse();
 
-            AnnouncementResponse announcement = await _announcementRepo.CreateAnnouncement(request.Announcement);
-            createCarCommandResponse.Announcement = announcement;
-            createCarCommandResponse.Car = await _carRepo.CreateCar(request.Car);
+            AnnouncementResponse announcement = new AnnouncementResponse
+            {
+                Title = request.Title,
+                Description = request.Description,
+                Price = request.Price
+            };
+            CarResponse car = new CarResponse
+            {
+                Mark = request.Mark,
+                Model = request.Model, 
+                Year = request.Year,
+                Body = request.Body,
+                ColorBody = request.ColorBody,
+                Km = request.Km,
+                HP = request.HP,
+                FuelType = request.FuelType,
+                Cm3 = request.Cm3,
+                Gearbox = request.Gearbox,
+                Speeds = request.Speeds,
+                Cylinders = request.Cylinders,
+                Traction = request.Traction, 
+                Paint = request.Paint,
+                NumberDoors = request.NumberDoors,
+                NumberSeats = request.NumberSeats,
+                Weight = request.Weight
+            };
+
+            createCarCommandResponse.Announcement = await _announcementRepo.CreateAnnouncement(announcement);
+            createCarCommandResponse.Car = await _carRepo.CreateCar(car);
 
             return createCarCommandResponse;
         }

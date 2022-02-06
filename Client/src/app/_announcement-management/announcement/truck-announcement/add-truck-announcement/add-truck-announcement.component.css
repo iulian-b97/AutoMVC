@@ -11,6 +11,13 @@
     border: 1px solid dimgray;
 }
 
+.form-align {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 .input-group {
     display: flex;
     flex-direction: column;

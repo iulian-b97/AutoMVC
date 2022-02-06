@@ -37,37 +37,13 @@ namespace AnnouncementManagement.Infrastructure.Persistence.Repositories
 
         public async Task<AnnouncementResponse> CreateAnnouncement(AnnouncementRequest request)
         {
+            Announcement announcement = _mapper.Map<Announcement>(request);
+            announcement.Id = Guid.NewGuid().ToString();
 
-            //Announcement announcement = _mapper.Map<Announcement>(request);
-            //announcement.Id = Guid.NewGuid().ToString();
+            Create(announcement);
+            await _context.SaveChangesAsync();
 
-            /* Announcement announcement = new Announcement
-            {
-                Id = Guid.NewGuid().ToString(),
-                Title = request.Title,
-                Description = request.Description,
-                Price = request.Price
-            };
-
-                Create(announcement);
-
-                await _context.SaveChangesAsync();
-
-                return _mapper.Map<AnnouncementResponse>(announcement); */
-
-            //test
-             Announcement res = new Announcement
-             {
-                 Id = Guid.NewGuid().ToString(),
-                 Title = "xxxxxx",
-                 Description = "xxxxx",
-                 Price = 1111
-             };
-             Create(res);
-             await _context.SaveChangesAsync();
-             return _mapper.Map<AnnouncementResponse>(res); 
-
-            //return null;
+            return _mapper.Map<AnnouncementResponse>(announcement); 
         }
 
         public void UpdateAnnouncement(Announcement announcement)

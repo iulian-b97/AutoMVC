@@ -6,7 +6,18 @@ namespace AnnouncementManagement.Application.Features.AnnouncementFeatures.Comma
 {
     public class CreateMotorcycleAnnouncementCommand : IRequest<CreateMotorcycleAnnouncementCommandResponse>
     {
-        public AnnouncementRequest Announcement { get; set; }
-        public MotorcycleRequest Motorcycle { get; set; }
+        public string Title { get; set; }
+        public int Price { get; set; }
+        public string Description { get; set; }
+
+        public string Mark { get; set; }
+        public string Model { get; set; }
+        public int Year { get; set; }
+        public string Body { get; set; }
+        public string ColorBody { get; set; }
+        public int Km { get; set; }
+        public int HP { get; set; }
+        public int Cm3 { get; set; }
+        public string Gearbox { get; set; }
     }
 }

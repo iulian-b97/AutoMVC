@@ -13,6 +13,6 @@ namespace AnnouncementManagement.Application.Models.Requests.VehicleRequests
         public int Year { get; set; }
         public string Body { get; set; }
         public string ColorBody { get; set; }
-        public string NumberDoors { get; set; }
+        public int NumberDoors { get; set; }
     }
 }

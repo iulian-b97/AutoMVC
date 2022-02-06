@@ -1,62 +1,57 @@
-<div class="details-form">
-    <div class="input-group">
-        <label>Mark</label>
-        <select>
-            <option>Option 1</option>
-            <option>Option 2</option>
-        </select>
+<form [formGroup]="announcementForm" autocomplete="off" (submit)="createAnnouncement()">  
+    <div class="details-form">
+        <div class="form-align" formGroupName="trailer">
+            <div class="input-group">
+                <label>Mark</label>
+                <select formControlName="mark">
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Model</label>
+                <select formControlName="model">
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Year</label>
+                <input type="number" formControlName="year">
+            </div>
+            <div class="input-group">
+                <label>Body</label>
+                <select formControlName="body">
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Color body</label>
+                <input type="text" formControlName="colorBody">
+            </div>
+            <div class="input-group">
+                <label>Number doors</label>
+                <input type="number" formControlName="numberDoors">
+            </div>
+        </div>
     </div>
 
-    <div class="input-group">
-        <label>Model</label>
-        <select>
-            <option>Option 1</option>
-            <option>Option 2</option>
-        </select>
+    <div formGroupName="announcement">
+        <div class="short-description">
+            <label>Short description</label>
+            <input type="text" formControlName="title">
+        </div>
+        <div class="long-description">
+            <label>Description</label>
+            <textarea formControlName="description"></textarea>
+        </div>
+        <div class="price-box">
+            <label>Price</label>
+            <input type="number" formControlName="price">
+        </div>
+        <div class="btn-box">
+            <button class="sell-btn"><i class="fas fa-plus"></i> SELL</button>
+        </div>
     </div>
-
-    <div class="input-group">
-        <label>Year</label>
-        <input type="text">
-    </div>
-
-    <div class="input-group">
-        <label>Body</label>
-        <select>
-            <option>Option 1</option>
-            <option>Option 2</option>
-        </select>
-    </div>
-
-    <div class="input-group">
-        <label>Color body</label>
-        <input type="text">
-    </div>
-
-    <div class="input-group">
-        <label>Number doors</label>
-        <select>
-            <option>Option 1</option>
-            <option>Option 2</option>
-        </select>
-    </div>
-</div>
-
-<div class="short-description">
-    <label>Short description</label>
-    <input type="text">
-</div>
-
-<div class="long-description">
-    <label>Description</label>
-    <textarea></textarea>
-</div>
-
-<div class="price-box">
-    <label>Price</label>
-    <input type="text">
-</div>
-
-<div class="btn-box">
-    <button class="sell-btn"><i class="fas fa-plus"></i> SELL</button>
-</div>
+</form>  
