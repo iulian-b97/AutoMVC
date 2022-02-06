@@ -37,14 +37,64 @@ namespace AnnouncementManagement.Infrastructure.Persistence.Repositories.Vehicle
 
         public async Task<CarResponse> CreateCar(CarRequest request)
         {
-            Car car = _mapper.Map<Car>(request);
-            car.Id = Guid.NewGuid().ToString();
+
+            //Car car = _mapper.Map<Car>(request);
+            //car.Id = Guid.NewGuid().ToString();
+
+             Car car = new Car
+             {
+                 Id = Guid.NewGuid().ToString(),
+                 Mark = request.Mark,
+                 Model = request.Model,
+                 Year = request.Year,
+                 Body = request.Body,
+                 ColorBody = request.ColorBody,
+                 Km = request.Km,
+                 HP = request.HP,
+                 FuelType = request.FuelType,
+                 Cm3 = request.Cm3,
+                 Gearbox = request.Gearbox,
+                 Speeds = request.Speeds,
+                 Cylinders = request.Cylinders,
+                 Traction = request.Traction,
+                 Paint = request.Paint,
+                 NumberDoors = request.NumberDoors,
+                 NumberSeats = request.NumberSeats,
+                 Weight = request.Weight
+             };
 
             Create(car);
 
             await _context.SaveChangesAsync();
 
             return _mapper.Map<CarResponse>(car);
+
+
+        //test
+        /* Car res = new Car
+         {
+             Id = Guid.NewGuid().ToString(),
+             Mark = "xxxx",
+             Model = "xxxxx",
+             Year = 1111,
+             Body = "xxxx",
+             ColorBody = "xxxxx",
+             Km = 1111,
+             HP = 1111,
+             FuelType = "xxxx",
+             Cm3 = 1111,
+             Gearbox = "xxxx",
+             Speeds = 1111,
+             Cylinders = 1111,
+             Traction = "xxxx",
+             Paint = "xxxx",
+             NumberDoors = 1111,
+             NumberSeats = 1111,
+             Weight = 1111
+         };
+         Create(res);
+         await _context.SaveChangesAsync();
+         return _mapper.Map<CarResponse>(res); */
         }
 
         public void UpdateCar(Car car)

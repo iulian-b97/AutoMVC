@@ -2,7 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { BehaviorSubject } from "rxjs";
-import { IdentityService } from "../identity-service";
+import { IdentityService } from "../identity.service";
 
 
 @Injectable({

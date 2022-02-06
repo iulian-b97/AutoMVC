@@ -37,14 +37,19 @@ namespace AnnouncementManagement.Infrastructure.Persistence.Repositories.Vehicle
 
         public async Task<MotorcycleResponse> CreateMotorcycle(MotorcycleRequest request)
         {
-            Motorcycle motorcycle = _mapper.Map<Motorcycle>(request);
-            motorcycle.Id = Guid.NewGuid().ToString();
+            if(request != null)
+            {
+                Motorcycle motorcycle = _mapper.Map<Motorcycle>(request);
+                motorcycle.Id = Guid.NewGuid().ToString();
 
-            Create(motorcycle);
+                Create(motorcycle);
 
-            await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();
 
-            return _mapper.Map<MotorcycleResponse>(motorcycle);
+                return _mapper.Map<MotorcycleResponse>(motorcycle);
+            }
+
+            return null;
         }
 
         public void UpdateMotorcycle(Motorcycle motorcycle)

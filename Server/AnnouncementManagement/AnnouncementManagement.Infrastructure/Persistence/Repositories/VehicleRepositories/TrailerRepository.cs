@@ -37,15 +37,17 @@ namespace AnnouncementManagement.Infrastructure.Persistence.Repositories.Vehicle
 
         public async Task<TrailerResponse> CreateTrailer(TrailerRequest request)
         {
-            Trailer trailer = _mapper.Map<Trailer>(request);
-            trailer.Id = Guid.NewGuid().ToString();
+            if (request != null)
+            {
+                Trailer trailer = _mapper.Map<Trailer>(request);
+                trailer.Id = Guid.NewGuid().ToString();
+                Create(trailer);
+                await _context.SaveChangesAsync();
+                return _mapper.Map<TrailerResponse>(trailer);
+            }
 
-            Create(trailer);
-
-            await _context.SaveChangesAsync();
-
-            return _mapper.Map<TrailerResponse>(trailer);
-        }
+            return null;
+         }
 
         public void UpdateTrailer(Trailer trailer)
         {

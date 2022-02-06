@@ -37,14 +37,16 @@ namespace AnnouncementManagement.Infrastructure.Persistence.Repositories.Vehicle
 
         public async Task<VanResponse> CreateVan(VanRequest request)
         {
-            Van van = _mapper.Map<Van>(request);
-            van.Id = Guid.NewGuid().ToString();
+            if (request != null)
+            {
+                Van van = _mapper.Map<Van>(request);
+                van.Id = Guid.NewGuid().ToString();
+                Create(van);
+                await _context.SaveChangesAsync();
+                return _mapper.Map<VanResponse>(van);
+            }
 
-            Create(van);
-
-            await _context.SaveChangesAsync();
-
-            return _mapper.Map<VanResponse>(van);
+            return null;
         }
 
         public void UpdateVan(Van van)

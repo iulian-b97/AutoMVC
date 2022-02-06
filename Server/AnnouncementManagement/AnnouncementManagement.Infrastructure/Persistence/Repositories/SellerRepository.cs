@@ -37,14 +37,16 @@ namespace AnnouncementManagement.Infrastructure.Persistence.Repositories
 
         public async Task<SellerResponse> CreateSeller(SellerRequest request)
         {
-            Seller seller = _mapper.Map<Seller>(request);
-            seller.Id = Guid.NewGuid().ToString();
+            if (request != null)
+            {
+                Seller seller = _mapper.Map<Seller>(request);
+                seller.Id = Guid.NewGuid().ToString();
+                Create(seller);
+                await _context.SaveChangesAsync();
+                return _mapper.Map<SellerResponse>(seller);
+            }
 
-            Create(seller);
-
-            await _context.SaveChangesAsync();
-
-            return _mapper.Map<SellerResponse>(seller);
+            return null;
         }
 
         public void UpdateAnnouncement(Seller seller)

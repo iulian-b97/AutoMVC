@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AppRoutingModule } from '../app-routing.module';
+import { IdentityRoutingModule } from './identity-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AuthenticationComponent } from './authentication/authentication.component';
@@ -28,7 +28,7 @@ import { EditUsernameComponent } from './user-account/edit-account/edit-username
     ],
     imports: [
       CommonModule,
-      AppRoutingModule,
+      IdentityRoutingModule,
       FormsModule,
       ReactiveFormsModule
     ]

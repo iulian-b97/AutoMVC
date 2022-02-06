@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
-import { IdentityService } from "../identity-service";
+import { IdentityService } from "../identity.service";
 import { RefreshTokenRequest } from "./refresh-token-request.model";
 
 @Injectable()

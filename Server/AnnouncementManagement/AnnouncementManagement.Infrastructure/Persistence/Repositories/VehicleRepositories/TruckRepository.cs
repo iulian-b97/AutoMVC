@@ -37,14 +37,16 @@ namespace AnnouncementManagement.Infrastructure.Persistence.Repositories.Vehicle
 
         public async Task<TruckResponse> CreateTruck(TruckRequest request)
         {
-            Truck truck = _mapper.Map<Truck>(request);
-            truck.Id = Guid.NewGuid().ToString();
+            if (request != null)
+            {
+                Truck truck = _mapper.Map<Truck>(request);
+                truck.Id = Guid.NewGuid().ToString();
+                Create(truck);
+                await _context.SaveChangesAsync();
+                return _mapper.Map<TruckResponse>(truck);
+            }
 
-            Create(truck);
-
-            await _context.SaveChangesAsync();
-
-            return _mapper.Map<TruckResponse>(truck);
+            return null;
         }
 
         public void UpdateTruck(Truck truck)

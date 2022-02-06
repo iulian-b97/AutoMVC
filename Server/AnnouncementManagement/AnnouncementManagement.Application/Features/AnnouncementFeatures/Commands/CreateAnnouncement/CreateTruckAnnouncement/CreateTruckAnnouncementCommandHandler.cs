@@ -22,9 +22,10 @@ namespace AnnouncementManagement.Application.Features.AnnouncementFeatures.Comma
         {
             CreateTruckAnnouncementCommandResponse createTruckCommandResponse = new CreateTruckAnnouncementCommandResponse();
 
+            /*
             AnnouncementResponse announcement = await _announcementRepo.CreateAnnouncement(request.Announcement);
             createTruckCommandResponse.Announcement = announcement;
-            createTruckCommandResponse.Truck = await _truckRepo.CreateTruck(request.Truck);
+            createTruckCommandResponse.Truck = await _truckRepo.CreateTruck(request.Truck); */
 
             return createTruckCommandResponse;
         }

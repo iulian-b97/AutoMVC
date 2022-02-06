@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AnnouncementRoutingModule } from './announcement-routing.module';
 
+import { HomeComponent } from './home/home.component';
 import { CarAnnouncementComponent } from './announcement/car-announcement/car-announcement.component';
 import { MotorcycleAnnouncementComponent } from './announcement/motorcycle-announcement/motorcycle-announcement.component';
 import { TruckAnnouncementComponent } from './announcement/truck-announcement/truck-announcement.component';
@@ -22,13 +25,11 @@ import { AddMotorcycleAnnouncementComponent } from './announcement/motorcycle-an
 import { AddTruckAnnouncementComponent } from './announcement/truck-announcement/add-truck-announcement/add-truck-announcement.component';
 import { AddVanAnnouncementComponent } from './announcement/van-announcement/add-van-announcement/add-van-announcement.component';
 import { AddTrailerAnnouncementComponent } from './announcement/trailer-announcement/add-trailer-announcement/add-trailer-announcement.component';
-import { AppRoutingModule } from '../app-routing.module';
 import { SearchCarComponent } from './home/search-car/search-car.component';
 import { SearchMotorcycleComponent } from './home/search-motorcycle/search-motorcycle.component';
 import { SearchTruckComponent } from './home/search-truck/search-truck.component';
 import { SearchVanComponent } from './home/search-van/search-van.component';
 import { SearchTrailerComponent } from './home/search-trailer/search-trailer.component';
-import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -63,7 +64,9 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
+    FormsModule,
+    ReactiveFormsModule,
+    AnnouncementRoutingModule
   ],
   exports: [
     CarAnnouncementComponent,

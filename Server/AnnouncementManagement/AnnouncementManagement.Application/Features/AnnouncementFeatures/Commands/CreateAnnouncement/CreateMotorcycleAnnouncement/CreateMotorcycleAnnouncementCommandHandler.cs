@@ -23,9 +23,10 @@ namespace AnnouncementManagement.Application.Features.AnnouncementFeatures.Comma
         {
             CreateMotorcycleAnnouncementCommandResponse createMotorcycleCommandResponse = new CreateMotorcycleAnnouncementCommandResponse();
 
+            /*
             AnnouncementResponse announcement = await _announcementRepo.CreateAnnouncement(request.Announcement);
             createMotorcycleCommandResponse.Announcement = announcement;
-            createMotorcycleCommandResponse.Motorcycle = await _motorcycleRepo.CreateMotorcycle(request.Motorcycle);
+            createMotorcycleCommandResponse.Motorcycle = await _motorcycleRepo.CreateMotorcycle(request.Motorcycle); */
 
             return createMotorcycleCommandResponse;
         }

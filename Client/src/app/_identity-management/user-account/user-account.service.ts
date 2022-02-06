@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { FormBuilder, Validators } from "@angular/forms";
-import { IdentityService } from "../identity-service";
+import { IdentityService } from "../identity.service";
 import { User } from "./user.model";
 import { Observable } from "rxjs";
 
